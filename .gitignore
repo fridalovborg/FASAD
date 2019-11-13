@@ -4,9 +4,9 @@ wp-content/languages
 wp-content/themes/twentynineteen
 wp-content/themes/twentyseventeen
 wp-content/themes/twentysixteen
-wp-content/themes/fasad/node_modules
-wp-content/themes/fasad/dist
-wp-content/themes/fasad/package-lock.json
+wp-content/themes/fasad2019/node_modules
+wp-content/themes/fasad2019/dist
+wp-content/themes/fasad2019/package-lock.json
 wp-content/uploads
 wp-includes
 .htaccess
