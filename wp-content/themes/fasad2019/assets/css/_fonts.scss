@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap');
+
+h1,
+h2,
+h3,
+p,
+.editor-post-title__block .editor-post-title__input {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+a,
+a:active,
+a:link,
+a:hover,
+a:visited {
+  text-decoration: underline;
+  color: $black;
+}
+
+p {
+  font-weight: 300;
+  line-height: 22px;
+  font-size: 18px;
+}
+
+strong {
+  font-weight: 600;
+}

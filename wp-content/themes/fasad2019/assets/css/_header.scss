@@ -1,0 +1,21 @@
+.header {
+    background-color: $white;
+    border: 1px solid $black;
+
+    .custom-logo-link .custom-logo {
+        margin: 100px auto;
+        display: block;
+    }
+
+    &__menu &__menu-list {
+        display: flex;
+        padding: 0;
+        // margin: 0;
+        justify-content: center;
+    }
+
+    &__menu &__menu-list .menu-item {
+        list-style-type: none;
+        margin: 0 30px;
+    }
+}

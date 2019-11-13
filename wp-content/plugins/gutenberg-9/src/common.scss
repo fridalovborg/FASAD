@@ -1,0 +1,23 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+
+//Colors
+$black: #000;
+$white: #fff;
+
+//Font family
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap');
+
+// Media Queries
+$desktop: "screen and (min-width: 1024px)";
+$widescreen: "screen and (min-width: 1920px)";
+$mobileLandscape: "screen and (orientation:landscape)";
+
+//Change editor width
+.wp-block {
+    max-width: 100% !important;
+}

@@ -1,0 +1,41 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap");
+.wp-block {
+  max-width: 100% !important; }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-cgb-block-gutenberg-9 {
+  background: pink;
+  border: 0.2rem solid #000;
+  color: #000;
+  margin: 0 auto;
+  max-width: 740px;
+  padding: 2rem; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap");
+.wp-block {
+  max-width: 100% !important; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap");
+.wp-block {
+  max-width: 100% !important; }
