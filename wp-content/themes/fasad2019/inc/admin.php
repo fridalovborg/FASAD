@@ -8,4 +8,7 @@ function allowed_blocks( $allowed_block_types, $post ) {
 add_filter( 'allowed_block_types', 'allowed_blocks', 10, 2 );
 
 // Customazier logo
-add_theme_support( 'custom-logo' );
+add_theme_support( 'custom-logo', array(
+    'width'  => 324,
+    'flex-height' => true,
+) );

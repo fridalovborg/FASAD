@@ -5,33 +5,31 @@ const { Component } = wp.element;
 const { RichText } = wp.editor;
 
 export default class Edit extends Component {
+	render() {
+		const {
+			attributes: { message },
+			className, setAttributes,
+		} = this.props;
 
-    constructor() {
-        super( ...arguments );
-    }
+		// eslint-disable-next-line no-shadow
+		const onChangeMessage = message => {
+			setAttributes( { message } );
+		};
 
-    render() {
-        const {
-            attributes: { message },
-            className, setAttributes
-        } = this.props;
-
-        const onChangeMessage = message => { setAttributes( { message } ) };
-
-        return (
-            <div className={ classnames(
-                className,
-                'text-block'
-            ) }>
-                <RichText
-                    tagName="div"
-                    multiline="p"
-                    placeholder={ __( 'Lorem ipsum dolor sit amet...', 'fasad' ) }
-                    onChange={ onChangeMessage }
-                    className={""}
-                    value={ message }
-                />
-            </div>
-        );
-    }
+		return (
+			<div className={ classnames(
+				className,
+				'text-block'
+			) }>
+				<RichText
+					tagName="div"
+					multiline="p"
+					placeholder={ __( 'Lorem ipsum dolor sit amet...', 'fasad' ) }
+					onChange={ onChangeMessage }
+					className={ '' }
+					value={ message }
+				/>
+			</div>
+		);
+	}
 }

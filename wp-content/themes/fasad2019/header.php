@@ -13,10 +13,7 @@
     }
 </style>
 </head>
-<body>
-    <pre style="display: none;">
-        <?php //var_dump(get_custom_logo()) ?>
-    </pre>
+<body id="fasad">
     <header class="header">
         <?php the_custom_logo() ?>
 
