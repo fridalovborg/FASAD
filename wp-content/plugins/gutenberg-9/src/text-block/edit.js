@@ -22,12 +22,13 @@ export default class Edit extends Component {
 				'text-block'
 			) }>
 				<RichText
-					tagName="div"
-					multiline="p"
+					tagName="ul"
+					multiline="li"
 					placeholder={ __( 'Lorem ipsum dolor sit amet...', 'fasad' ) }
 					onChange={ onChangeMessage }
 					className={ '' }
 					value={ message }
+					allowedFormats={ [ 'core/bold', 'core/italic', 'core/link' ] }
 				/>
 			</div>
 		);
