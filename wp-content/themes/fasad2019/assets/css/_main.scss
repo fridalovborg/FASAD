@@ -1,3 +1,11 @@
 .fasad-main {
-    background: pink;
+    background: #FEF2EA;
+    display: block; 
+    margin: 0 auto;
+    padding: 80px 80px 35px;
+    // width: 100%;
+
+    &__container {
+        margin-bottom: 35px;
+    }
 }

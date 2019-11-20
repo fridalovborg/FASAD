@@ -18,13 +18,13 @@
         <?php the_custom_logo() ?>
 
         <?php
-        wp_nav_menu(
-            array(
-                'menu' => 'main-menu',
-                'container_class' => 'header__menu',
-                'menu_class' => 'header__menu-list',
-                'items_wrap' => '<ul class="%2$s">%3$s</ul>',
-            )
-        );
+        // wp_nav_menu(
+        //     array(
+        //         'menu' => 'main-menu',
+        //         'container_class' => 'header__menu',
+        //         'menu_class' => 'header__menu-list',
+        //         'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+        //     )
+        // );
         ?>
     </header>

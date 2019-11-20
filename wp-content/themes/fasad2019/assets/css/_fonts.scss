@@ -1,12 +1,10 @@
 #fasad {
   font-family: Futura, Trebuchet MS, Arial, sans-serif;
+  color: $black;
 }
 
-h1,
-h2,
-h3,
-p,
-.editor-post-title__block .editor-post-title__input {
+.wp-admin .editor-post-title__block .editor-post-title__input,
+.wp-admin .editor-block-list__block .rich-text {
   font-family: Futura, Trebuchet MS, Arial, sans-serif !important;
 }
 
@@ -16,7 +14,6 @@ a:link,
 a:hover,
 a:visited {
   text-decoration: underline;
-  color: $black;
 }
 
 p {
@@ -25,6 +22,7 @@ p {
   font-size: 18px;
 }
 
-strong {
+strong, 
+b {
   font-weight: 600;
 }

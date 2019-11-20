@@ -8,6 +8,7 @@ import css from '../css/index.scss';
         body.on('click', ( e ) => {
             //function
             console.log(e)
+            console.log('Works!')
         });
 
     });

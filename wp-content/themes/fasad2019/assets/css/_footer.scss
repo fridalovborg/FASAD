@@ -1,4 +1,7 @@
-.footer {
-    background-color: $white;
-    border: 1px solid $black;
+.fasad-footer {
+    border-top: 3px solid #FFF9F5;
+
+    &__container {
+        margin-top: 35px;
+    }
 }
