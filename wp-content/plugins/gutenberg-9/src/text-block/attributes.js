@@ -3,6 +3,10 @@ const attributes = {
         type: 'array',
         source: 'children',
         selector: '.message'
+    },
+    color: {
+        type: 'string',
+        default: '#107664',
     }
 };
 

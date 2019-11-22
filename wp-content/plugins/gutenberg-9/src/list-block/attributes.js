@@ -12,6 +12,10 @@ const attributes = {
 		type: 'integer',
 		default: 0,
 	},
+	color: {
+        type: 'string',
+        default: '#107664',
+    }
 };
 
 export default attributes;

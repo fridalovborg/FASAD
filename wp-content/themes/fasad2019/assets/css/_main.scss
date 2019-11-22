@@ -2,10 +2,19 @@
     background: #FEF2EA;
     display: block; 
     margin: 0 auto;
-    padding: 80px 80px 35px;
-    // width: 100%;
+    padding-top: 25px;
+    width: 90%;
+
+    @media #{$desktop} {
+        padding-top: 80px;
+        width: 70%;
+    }
 
     &__container {
-        margin-bottom: 35px;
+        margin: 0 20px 15px;
+
+        @media #{$desktop} {
+            margin: 0 80px 35px;
+        }
     }
 }

@@ -35,7 +35,7 @@ export default registerBlockType(
 			];
 		},
 		save: props => {
-			const { attributes: { message, values, listType } } = props;
+			const { attributes: { message, values, listType, color } } = props;
 			const ListType = '' + values;
 
 			return (
@@ -47,6 +47,7 @@ export default registerBlockType(
 						{ 'bullet-list': listType === 0 },
 						{ 'orded-list': listType === 1 },
 					) }
+						style={ { color: color } }
 					>
 						{ message }
 					</ListType>

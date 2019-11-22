@@ -35,7 +35,7 @@ export default registerBlockType(
 			];
 		},
 		save: props => {
-			const { attributes: { message } } = props;
+			const { attributes: { message, color } } = props;
 
 			return (
 				<div>
@@ -44,6 +44,7 @@ export default registerBlockType(
 						'message',
 						'text-block'
 					) }
+						style={ { color: color } }
 					>
 						{ message }
 					</div>

@@ -4,20 +4,34 @@ import ordedIcon from './orded-icon';
 
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { RichText, BlockControls } = wp.editor;
-const { Toolbar, Tooltip, Button } = wp.components;
+const { RichText, BlockControls, InspectorControls } = wp.editor;
+const { Toolbar, Tooltip, Button, ColorPalette, PanelBody } = wp.components;
 
 export default class Edit extends Component {
 	render() {
 		const {
-			attributes: { message, listType, values },
-			className, setAttributes,
+			attributes: { 
+				message, 
+				listType, 
+				values, 
+				color
+			},
+			className, 
+			setAttributes,
 		} = this.props;
 
-		// eslint-disable-next-line no-shadow
 		const onChangeMessage = message => {
 			setAttributes( { message } );
 		};
+
+		const colors = [
+			{ name: 'Mint', color: '#C8EDDB' },
+			{ name: 'Green', color: '#107664' },
+			{ name: 'Beige', color: '#BEAF9A' },
+			{ name: 'Light pink', color: '#FFF9F5' },
+			{ name: 'Pink', color: '#F2A7BC' },
+		];
+
 		const classes = classnames(
 			className,
 			'list',
@@ -61,12 +75,23 @@ export default class Edit extends Component {
 					</Toolbar>
 				</BlockControls>
 
+				<InspectorControls>
+					<PanelBody title={ __( 'Colors' ) }>
+						<ColorPalette
+							colors={ colors }
+							value={ color }
+							onChange={ color => setAttributes( { color } ) }
+						/>
+					</PanelBody>
+				</InspectorControls>
+
 				<RichText
 					tagName={ values }
 					multiline="li"
 					placeholder={ __( 'Lorem ipsum dolor sit amet...', 'fasad' ) }
 					onChange={ onChangeMessage }
 					value={ message }
+					style={ { color: color } }
 					allowedFormats={ [ 'core/bold', 'core/italic', 'core/link' ] }
 				/>
 			</div>
