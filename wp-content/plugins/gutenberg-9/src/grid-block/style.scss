@@ -1,14 +1,12 @@
-/**
- * #.# Styles
- *
- * CSS for both Frontend+Backend.
- */
+.grid-block {
+	display: flex;
+	flex-direction: column;
 
-.wp-block-cgb-block-gutenberg-9  {
-  background: #f00;
-  border: 0.2rem solid $black;
-  color: $black;
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 2rem;
+	@media #{$desktop} {
+		flex-direction: row;
+	}
+
+	&__column {
+		flex: 1;
+	}
 }

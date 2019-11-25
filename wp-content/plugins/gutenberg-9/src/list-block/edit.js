@@ -4,7 +4,7 @@ import ordedIcon from './orded-icon';
 
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { RichText, BlockControls, InspectorControls } = wp.editor;
+const { RichText, BlockControls, InspectorControls } = wp.blockEditor;
 const { Toolbar, Tooltip, Button, ColorPalette, PanelBody, ToggleControl } = wp.components;
 
 export default class Edit extends Component {

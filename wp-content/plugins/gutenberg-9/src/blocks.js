@@ -10,6 +10,8 @@
  */
 
 import './grid-block/index.js';
+import './grid-block/grid-column/grid-column.js';
 import './heading-block/index.js';
 import './text-block/index.js';
 import './list-block/index.js';
+import './image-block/index.js';

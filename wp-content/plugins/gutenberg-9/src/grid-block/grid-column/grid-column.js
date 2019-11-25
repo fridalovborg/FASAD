@@ -1,16 +1,19 @@
 /**
- * Internal block libraries
+ * Grid Column block Gutenberg
+ *
+ * This block returns each grid column.
  */
+
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.editor;
+const { InnerBlocks } = wp.blockEditor;
 const { __ } = wp.i18n;
+
 /**
- * Register block
+ * Register Gutenberg block
  */
-export default registerBlockType(
-    'fasad/grid-column',
-    {
-        title: __( 'Grid column', 'fasad' ),
+registerBlockType(
+    'fasad/grid-column', {
+        title: __( 'Column', 'fasad' ),
         parent: ['fasad/grid-block'],
         category: 'common',
         icon: {
@@ -18,12 +21,13 @@ export default registerBlockType(
         },
 
         edit: () => {
-            const ALLOWED_BLOCKS = [ 'fasad/heading-block', 'fasad/text-block' ];
+            const ALLOWED_BLOCKS = [ 'fasad/heading-block', 'fasad/text-block', 'fasad/list-block', 'fasad/image-block' ];
 
             return (
-                <div className={ 'grid-column' }>
+                <div className='edit-grid-column'>
                     <InnerBlocks
-                        allowedBlocks={ ALLOWED_BLOCKS } 
+                        allowedBlocks={ ALLOWED_BLOCKS }
+                        templateLock={ false }
                     />
                 </div>        
             );
@@ -31,10 +35,10 @@ export default registerBlockType(
         },
         save: () => {
 			return (
-				<div className={ 'grid-column' }>
+				<div className='grid-block__column'>
 					<InnerBlocks.Content />
 				</div>
 			);
         },
-    },
+    } 
 );

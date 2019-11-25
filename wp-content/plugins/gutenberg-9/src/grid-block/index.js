@@ -9,36 +9,36 @@ import './style.scss';
 
 const { __ } = wp.i18n; 
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.editor;
+const { InnerBlocks } = wp.blockEditor;
 
 /**
  * Register Gutenberg block
  */
-registerBlockType( 'fasad/grid-block', {
-	title: __( 'Grid 2', 'fasad' ),
-	icon: 'grid-view', // https://developer.wordpress.org/resource/dashicons/.
-	category: 'common',
+registerBlockType( 
+	'fasad/grid-block', {
+		title: __( 'Grid', 'fasad' ),
+		icon: 'grid-view', // https://developer.wordpress.org/resource/dashicons/
+		category: 'common',
 
-	edit: props => {
-		const { setAttributes } = props;
-
-        return (
-            <div>
-                <InnerBlocks
-                    template={ [
-                        [ 'fasad/grid-block' ],
-                        [ 'fasad/grid-block' ]
-                    ]}
-                    templateLock={ 'all' }
-                />
-            </div>
-        );
-	},
-	save() {
-		return (
-			<div>
-				<InnerBlocks.Content />
-			</div>
-		);
-	}
-} );
+		edit: () => {
+			return (
+				<div className='edit-grid-block'>
+					<InnerBlocks
+						template={ [
+							[ 'fasad/grid-column' ],
+							[ 'fasad/grid-column' ]
+						]}
+						templateLock='all'
+					/>
+				</div>
+			);
+		},
+		save: () => {
+			return (
+				<div className='grid-block'>
+					<InnerBlocks.Content />
+				</div>
+			);
+		}
+	} 
+);

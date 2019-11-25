@@ -2,7 +2,7 @@ import classnames from 'classnames';
 
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { RichText, InspectorControls } = wp.editor;
+const { RichText, InspectorControls } = wp.blockEditor;
 const { ColorPalette, PanelBody } = wp.components;
 
 export default class Edit extends Component {
