@@ -5,7 +5,7 @@ const { Button } = wp.components;
 
 export default registerBlockType(
     'fasad/image-block', {
-        title: __( 'Image', 'fasad' ),
+        title: __( 'Test image block', 'fasad' ),
         category: 'common',
         icon: {
             src: 'format-image',
