@@ -1,3 +1,8 @@
-.heading-block {
-  font-size: 30px;
+.heading-block a {
+	color: inherit;
+	transition: 1s all;
+
+	&:hover {
+		color: $pink;
+	}
 }

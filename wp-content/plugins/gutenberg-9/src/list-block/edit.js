@@ -5,7 +5,7 @@ import ordedIcon from './orded-icon';
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { RichText, BlockControls, InspectorControls } = wp.editor;
-const { Toolbar, Tooltip, Button, ColorPalette, PanelBody } = wp.components;
+const { Toolbar, Tooltip, Button, ColorPalette, PanelBody, ToggleControl } = wp.components;
 
 export default class Edit extends Component {
 	render() {
@@ -14,7 +14,8 @@ export default class Edit extends Component {
 				message, 
 				listType, 
 				values, 
-				color
+				color,
+				fontSize
 			},
 			className, 
 			setAttributes,
@@ -37,6 +38,7 @@ export default class Edit extends Component {
 			'list',
 			{ 'bullet-list': listType === 0 },
 			{ 'orded-list': listType === 1 },
+			{ 'large-font-size': fontSize === true }
 		);
 
 		return (
@@ -83,6 +85,12 @@ export default class Edit extends Component {
 							onChange={ color => setAttributes( { color } ) }
 						/>
 					</PanelBody>
+					<ToggleControl
+						label="Font size"
+						help={ fontSize ? 'Large font size' : 'Small font size' }
+						checked={ fontSize }
+						onChange={ fontSize => setAttributes( { fontSize } ) }
+					/>
 				</InspectorControls>
 
 				<RichText

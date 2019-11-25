@@ -15,7 +15,11 @@ const attributes = {
 	color: {
         type: 'string',
         default: '#107664',
-    }
+	},
+	fontSize: {
+		type: 'boolean',
+		deafault: false
+	}
 };
 
 export default attributes;

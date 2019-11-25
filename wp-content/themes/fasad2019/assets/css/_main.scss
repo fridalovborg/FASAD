@@ -2,12 +2,16 @@
     background: #FEF2EA;
     display: block; 
     margin: 0 auto;
-    padding-top: 25px;
+    padding: 25px 0;
     width: 90%;
 
     @media #{$desktop} {
         padding-top: 80px;
         width: 70%;
+    }
+
+    &__title {
+        color: $green;
     }
 
     &__container {

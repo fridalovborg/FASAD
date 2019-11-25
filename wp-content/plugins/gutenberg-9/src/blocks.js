@@ -9,6 +9,7 @@
  * Webpack is compiling as the input file.
  */
 
+import './grid-block/index.js';
 import './heading-block/index.js';
 import './text-block/index.js';
 import './list-block/index.js';
