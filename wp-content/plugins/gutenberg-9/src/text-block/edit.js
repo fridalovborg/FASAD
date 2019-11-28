@@ -1,5 +1,11 @@
+/**
+ * Block dependencies
+ */
 import classnames from 'classnames';
 
+/**
+ * Internal block libraries
+ */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { RichText, InspectorControls } = wp.blockEditor;
@@ -47,7 +53,6 @@ export default class Edit extends Component {
 					multiline="p"
 					placeholder={ __( 'Lorem ipsum dolor sit amet...', 'fasad' ) }
 					onChange={ onChangeMessage }
-					className={ '' }
 					value={ message }
 					style={ { color: color } }
 					allowedFormats={ [ 'core/bold', 'core/italic', 'core/link' ] }

@@ -1,4 +1,10 @@
 /**
+ * List block Gutenberg
+ *
+ * This block returns a ul or ol with li and content. 
+ */
+
+/**
  * Block dependencies
  */
 import classnames from 'classnames';
@@ -18,10 +24,9 @@ const { registerBlockType } = wp.blocks;
  * Register block
  */
 export default registerBlockType(
-	'fasad/list-block',
-	{
-		title: __( 'Lista', 'fasad' ),
-		description: __( 'Punkt- och nummerlista', 'fasad' ),
+	'fasad/list-block', {
+		title: __( 'List', 'fasad' ),
+		description: __( 'Bullet- and numberlist', 'fasad' ),
 		category: 'common',
 		icon: {
 			src: bulletIcon,
@@ -41,8 +46,6 @@ export default registerBlockType(
 			return (
 				<div>
 					<ListType className={ classnames(
-						props.className,
-						'list-message',
 						'list-block',
 						{ 'bullet-list': listType === 0 },
 						{ 'orded-list': listType === 1 },

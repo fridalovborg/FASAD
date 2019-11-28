@@ -1,11 +1,23 @@
+/**
+ * Image block Gutenberg
+ *
+ * This block returns a img with a url to the image from the Media library. 
+ */
+
+/**
+ * Internal block libraries
+ */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Editable, MediaUpload } = wp.blockEditor;
 const { Button } = wp.components;
 
+/**
+ * Register block
+ */
 export default registerBlockType(
     'fasad/image-block', {
-        title: __( 'Test image block', 'fasad' ),
+        title: __( 'Image', 'fasad' ),
         category: 'common',
         icon: {
             src: 'format-image',
@@ -27,10 +39,10 @@ export default registerBlockType(
                 selector: 'img',
             }
         },
-
         edit: props => {
             const { attributes: { imgID, imgURL, imgAlt },
                 className, setAttributes } = props;
+
             const onSelectImage = img => {
                 setAttributes( {
                     imgID: img.id,

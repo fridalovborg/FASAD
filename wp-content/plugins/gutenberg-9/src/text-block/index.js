@@ -18,10 +18,9 @@ const { registerBlockType } = wp.blocks;
  * Register block
  */
 export default registerBlockType(
-	'fasad/text-block',
-	{
+	'fasad/text-block', {
 		title: __( 'Text', 'fasad' ),
-		description: __( 'Brödtext', 'fasad' ),
+		description: __( 'Paragraph', 'fasad' ),
 		category: 'common',
 		icon: {
 			src: icon,
@@ -41,7 +40,6 @@ export default registerBlockType(
 				<div>
 					<div className={ classnames(
 						props.className,
-						'message',
 						'text-block'
 					) }
 						style={ { color: color } }

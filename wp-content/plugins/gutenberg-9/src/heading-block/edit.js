@@ -1,5 +1,11 @@
+/**
+ * Block dependencies
+ */
 import classnames from 'classnames';
 
+/**
+ * Internal block libraries
+ */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { RichText, InspectorControls } = wp.blockEditor;
@@ -9,7 +15,7 @@ export default class Edit extends Component {
 	render() {
 		const {
 			attributes: { 
-				message, 
+				message,
 				color 
 			},
 			className,
@@ -29,7 +35,7 @@ export default class Edit extends Component {
 		];
 
 		return (
-			<div className={ classnames( className, 'heading-block' ) }>
+			<div className='heading-block'>
 				<InspectorControls>
 					<PanelBody title={ __( 'Colors' ) }>
 						<ColorPalette

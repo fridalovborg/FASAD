@@ -1,7 +1,13 @@
+/**
+ * Block dependencies
+ */
 import classnames from 'classnames';
 import bulletIcon from './bullet-icon';
 import ordedIcon from './orded-icon';
 
+/**
+ * Internal block libraries
+ */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { RichText, BlockControls, InspectorControls } = wp.blockEditor;
@@ -33,18 +39,12 @@ export default class Edit extends Component {
 			{ name: 'Pink', color: '#F2A7BC' },
 		];
 
-		const classes = classnames(
-			className,
-			'list',
-			{ 'bullet-list': listType === 0 },
-			{ 'orded-list': listType === 1 },
-			{ 'large-font-size': fontSize === true }
-		);
-
 		return (
 			<div className={ classnames(
-				classes,
-				'list-block'
+				'list-block',
+				{ 'bullet-list': listType === 0 },
+				{ 'orded-list': listType === 1 },
+				{ 'large-font-size': fontSize === true }
 			) }>
 				<BlockControls key="custom-controls">
 					<Toolbar>

@@ -2,7 +2,7 @@ const attributes = {
     message: {
         type: 'array',
         source: 'children',
-        selector: '.message'
+        selector: '.text-block'
     },
     color: {
         type: 'string',

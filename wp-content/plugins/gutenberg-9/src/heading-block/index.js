@@ -1,4 +1,10 @@
 /**
+ * Heading block Gutenberg
+ *
+ * This block returns a h2 with content.
+ */
+
+/**
  * Block dependencies
  */
 import classnames from 'classnames';
@@ -17,9 +23,8 @@ const { registerBlockType } = wp.blocks;
  * Register block
  */
 export default registerBlockType(
-	'fasad/heading-block',
-	{
-		title: __( 'Rubrik', 'fasad' ),
+	'fasad/heading-block',{
+		title: __( 'Heading', 'fasad' ),
 		category: 'common',
 		icon: {
 			src: 'heading',
@@ -37,11 +42,7 @@ export default registerBlockType(
 
 			return (
 				<div>
-					<h2 className={ classnames(
-						props.className,
-						'heading-message',
-						'heading-block'
-					) }
+					<h2 className='heading-block'
 						style={ { color: color } }
 					>
 						{ message }
