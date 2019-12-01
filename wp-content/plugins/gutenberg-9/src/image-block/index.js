@@ -9,8 +9,8 @@
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { Editable, MediaUpload } = wp.blockEditor;
-const { Button } = wp.components;
+const { MediaUpload, MediaPlaceholder, BlockControls } = wp.blockEditor;
+const { IconButton, Toolbar } = wp.components;
 
 /**
  * Register block
@@ -23,13 +23,13 @@ export default registerBlockType(
             src: 'format-image',
         }, 
         attributes: {
-            imgURL: {
+            imgUrl: {
                 type: 'string',
                 source: 'attribute',
                 attribute: 'src',
                 selector: 'img',
             },
-            imgID: {
+            imgId: {
                 type: 'number',
             },
             imgAlt: {
@@ -40,13 +40,13 @@ export default registerBlockType(
             }
         },
         edit: props => {
-            const { attributes: { imgID, imgURL, imgAlt },
+            const { attributes: { imgId, imgUrl, imgAlt },
                 className, setAttributes } = props;
 
             const onSelectImage = img => {
                 setAttributes( {
-                    imgID: img.id,
-                    imgURL: img.url,
+                    imgId: img.id,
+                    imgUrl: img.url,
                     imgAlt: img.alt,
                 } );
             };
@@ -54,44 +54,85 @@ export default registerBlockType(
             return (
                 <div className={ className }>
 
-                    { ! imgID ? (
+                    { ! imgUrl ? (
 
-                        <MediaUpload
-                            onSelect={ onSelectImage }
-                            type="image"
-                            value={ imgID }
-                            render={ ( { open } ) => (
-                                <Button
-                                    className={ "button button-large" }
-                                    onClick={ open }
+                    <div className={ className }>
+                        <BlockControls>
+                            <Toolbar>
+                                <MediaUpload
+                                    onSelect={ onSelectImage }
+                                    type="image"
+                                    value={ imgId }
+                                    render={ ( { open } ) => (
+                                        <IconButton
+                                            onClick={ open }
+                                            className="components-toolbar__control"
+                                            label={__('Edit image')}
+                                            icon="edit"
+                                        >
+                                            { __( 'Upload image', 'fasad' ) }
+                                        </IconButton>
+                                    ) }
                                 >
-                                    { __( 'Ladda upp bild', 'fasad' ) }
-                                </Button>
-                            ) }
+                                </MediaUpload>
+                            </Toolbar>
+                        </BlockControls>
+                        <MediaPlaceholder
+                            onSelect={ onSelectImage }
+                            allowedTypes={ [ 'image' ] }
+                            labels={ { 
+                                title: __( 'Upload image', 'fasad' ), 
+                                instructions:''
+                            } }
+                            icon="format-image"
                         >
-                        </MediaUpload>
+                        </MediaPlaceholder>
+                    </div>
 
                     ) : (
 
+                        <div className={ className }>
+                        <BlockControls>
+                            <Toolbar>
+                                <MediaUpload
+                                    onSelect={ onSelectImage }
+                                    type="image"
+                                    value={ imgId }
+                                    render={ ( { open } ) => (
+                                        <IconButton
+                                            onClick={ open }
+                                            className="components-toolbar__control"
+                                            label={__('Edit image')}
+                                            icon="edit"
+                                        >
+                                            { __( 'Upload image', 'fasad' ) }
+                                        </IconButton>
+                                    ) }
+                                >
+                                </MediaUpload>
+                            </Toolbar>
+                        </BlockControls>
+                    
                         <div class="image-wrapper">
                             <img
-                                src={ imgURL }
+                                src={ imgUrl }
                                 alt={ imgAlt }
                             />
                         </div>
+                    </div>
                     )}
 
                 </div>
             );
         },
         save: props => {
-            const { imgURL, imgAlt } = props.attributes;
+            const { imgUrl, imgAlt } = props.attributes;
 
             return (
                 <div className='image-block'>
                     <img
                         className={ 'image-block__img' }
-                        src={ imgURL }
+                        src={ imgUrl }
                         alt={ imgAlt }
                     />
                 </div>

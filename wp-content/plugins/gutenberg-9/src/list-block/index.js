@@ -12,7 +12,6 @@ import attributes from './attributes';
 import Edit from './edit';
 import './editor.scss';
 import './style.scss';
-import bulletIcon from './bullet-icon';
 
 /**
  * Internal block libraries
@@ -28,9 +27,7 @@ export default registerBlockType(
 		title: __( 'List', 'fasad' ),
 		description: __( 'Bullet- and numberlist', 'fasad' ),
 		category: 'common',
-		icon: {
-			src: bulletIcon,
-		},
+		icon: 'editor-ul',
 		attributes,
 		edit: props => {
 			const { setAttributes } = props;
