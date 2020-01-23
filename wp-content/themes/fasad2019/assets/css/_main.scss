@@ -1,17 +1,23 @@
 .fasad-main {
     background: #FEF2EA;
     display: block; 
-    margin: 0 auto;
-    padding: 25px 0;
+    margin: 0 auto 45px;
+    padding-top: 25px;
     width: 90%;
 
     @media #{$desktop} {
-        padding-top: 80px;
-        width: 70%;
+        padding-top: 60px;
+        width: 80%;
+        margin-bottom: 105px;
     }
 
     &__title {
-        color: $green;
+        color: $mint;
+        margin-bottom: 30px;
+
+        @media #{$desktop} {
+            margin-bottom: 60px;
+        }
     }
 
     &__container {

@@ -1,17 +1,18 @@
-#fasad {
+.fasad {
   font-family: Futura, Trebuchet MS, Arial, sans-serif;
   color: $green;
 
-  a,
-  a:active,
-  a:link,
-  a:hover,
-  a:visited {
-    text-decoration: underline;
-  }
+  // a,
+  // a:active,
+  // a:link,
+  // a:hover,
+  // a:visited {
+  //   text-decoration: underline;
+  // }
 
   p, 
-  em {
+  em, 
+  li {
     font-weight: 400;
     line-height: 22px;
     font-size: 18px;
@@ -24,10 +25,6 @@
 
   h2 {
     font-size: 30px;
-  }
-
-  h1, h2, p, a, li {
-    margin: 0;
   }
 
   img {

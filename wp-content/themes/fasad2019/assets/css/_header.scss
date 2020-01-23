@@ -9,7 +9,7 @@
         height: auto;
 
         @media #{$desktop} {
-            margin: 85px auto 60px;
+            margin: 105px auto 60px;
             width: 324px;
         }
     }
@@ -28,11 +28,19 @@
         list-style-type: none;
     }
 
+    &__menu &__menu-list .menu-item.current-menu-item {
+        text-decoration: underline;
+    }
+
     &__menu &__menu-list .menu-item a {
         color: #BEAF9A;
         padding: 15px 30px;
         text-decoration: none;
         text-transform: uppercase;
+    }
+
+    &__menu &__menu-list .menu-item a:hover {
+        text-decoration: underline;
     }
 }
 
