@@ -3,10 +3,15 @@
 	flex-direction: column;
 
 	@media #{$desktop} {
-		flex-direction: row;
+        flex-direction: row;
+        justify-content: space-between;
 	}
 
 	&__column {
-		flex: 1;
+        width: 100%;
+        
+        @media #{$desktop} {
+            width: 45%;
+        }
 	}
 }
