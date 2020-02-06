@@ -19,6 +19,11 @@
         padding: 0;
         margin-bottom: 40px;
         justify-content: center;
+        flex-direction: column;
+
+        @media #{$ipad} {
+            flex-direction: row;
+        }
     }
 
     &__menu &__menu-list .menu-item {
@@ -28,19 +33,22 @@
         list-style-type: none;
     }
 
-    &__menu &__menu-list .menu-item.current-menu-item {
-        text-decoration: underline;
+    &__menu &__menu-list .menu-item.current-menu-item a {
+        padding-bottom: 5px;
+        border-bottom: 2px solid $beige;
     }
 
     &__menu &__menu-list .menu-item a {
-        color: #BEAF9A;
-        padding: 15px 30px;
+        color: $beige;
+        padding: 15px 0;
+        margin: 0 30px;
         text-decoration: none;
         text-transform: uppercase;
     }
 
     &__menu &__menu-list .menu-item a:hover {
-        text-decoration: underline;
+        padding-bottom: 5px;
+        border-bottom: 2px solid;
     }
 }
 

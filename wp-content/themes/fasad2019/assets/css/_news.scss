@@ -1,8 +1,18 @@
 .fasad-news {
     color: $mint;
 
-    &__item {
-        margin: 50px 0;
+    &__list {
+
+        &-item {
+            font-size: 30px;
+            margin: 50px 0;
+        } 
+    }
+
+    &__content {
+        font-weight: 400;
+        line-height: 22px;
+        font-size: 18px;
 
         &-link {
             color: inherit;
@@ -10,7 +20,7 @@
         }
     
         &-link:hover {
-            .fasad-news__item-title {
+            .fasad-news__content-title {
                 text-decoration: underline;
             }
         }

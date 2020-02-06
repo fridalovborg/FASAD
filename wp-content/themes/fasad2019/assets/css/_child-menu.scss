@@ -1,0 +1,43 @@
+.child-menu {
+
+    &__list {
+        display: flex;
+        padding: 0;
+        margin-bottom: 50px;
+        flex-direction: column;
+
+        @media #{$ipad} {
+            flex-direction: row;
+        }
+    }
+
+    .page_item {
+        list-style-type: none;
+    }
+
+    .page_item a {
+        color: $beige;
+        text-decoration: none;
+
+        @media #{$ipad} {
+            margin: 0 30px;
+        }
+    }
+
+    .page_item:first-child a {
+        margin-left: 0;
+    }
+
+    .page_item:last-child a {
+        margin-right: 0;
+    }
+
+    .page_item a:hover {
+        border-bottom: 1px solid $beige;
+        padding-bottom: 2px;
+    }
+
+    .current_page_item {
+        font-style: italic;
+    }
+}
