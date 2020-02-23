@@ -1,0 +1,37 @@
+.wpcf7 {
+    background: $mint;
+    padding: 5px 30px;
+
+    .form-title {
+        color: $ligtPink;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: $ligtPink;
+        padding-top: 10px;
+    }
+
+    label {
+        color: $ligtPink;
+        font-size: 16px;
+        font-style: italic;
+    }
+
+    .wpcf7-form-control-wrap {
+        border-bottom: 2px solid $ligtPink;
+        padding: 5px 0;
+    }
+
+    input[type=submit] {
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 33px;
+    }
+}

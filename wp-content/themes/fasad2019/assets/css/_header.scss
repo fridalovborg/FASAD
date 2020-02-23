@@ -33,7 +33,8 @@
         list-style-type: none;
     }
 
-    &__menu &__menu-list .menu-item.current-menu-item a {
+    &__menu &__menu-list .menu-item.current-menu-item a,
+    &__menu &__menu-list .menu-item.current-page-ancestor a {
         padding-bottom: 5px;
         border-bottom: 2px solid $beige;
     }
