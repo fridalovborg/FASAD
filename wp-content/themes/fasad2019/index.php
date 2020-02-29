@@ -14,8 +14,15 @@
             }
             
             if ( $children ) {
+                // $parent_title = get_post($post->post_parent)->post_title;
+                // $parent_url = get_post($post->post_parent)->guid;
+                // $is_active = is_page($post->post_parent) ? 'current_page_item' : '';
+                
                 echo '<nav class="child-menu">';
-                echo '<ul class="child-menu__list">' . $children . '</ul>';
+                echo '<ul class="child-menu__list">';
+                // echo '<li class="page_item '. $is_active .'"><a href="'. $parent_url .'">'. $parent_title .'</a></li>';
+                echo $children;
+                echo '</ul>';
                 echo '</nav>';
             }
 
