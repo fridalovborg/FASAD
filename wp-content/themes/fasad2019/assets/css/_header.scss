@@ -1,58 +1,90 @@
 .header {
     background-color: $white;
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    // box-shadow: 1px 1px 4px;
 
-    .custom-logo-link .custom-logo {
-        margin: 45px auto 30px;
-        display: block;
-        max-width: 100%;
-        width: 250px;
+    @media #{$desktop} {
+        position: static;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .custom-logo {
+        width: 200px;
         height: auto;
 
         @media #{$desktop} {
-            margin: 105px auto 60px;
             width: 324px;
+            margin: 105px auto 60px;
         }
     }
 
-    &__menu &__menu-list {
-        display: flex;
-        padding: 0;
-        margin-bottom: 40px;
-        justify-content: center;
-        flex-direction: column;
+    .mobile-menu-logo {
+        position: absolute;
+        right: 20px;
+        cursor: pointer;
 
-        @media #{$ipad} {
-            flex-direction: row;
+        @media #{$desktop} {
+            display: none;
+        }
+
+        svg {
+            width: 35px;
+            height: 35px;
+            fill: $green;
         }
     }
 
-    &__menu &__menu-list .menu-item {
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 27px;
-        list-style-type: none;
-    }
+    &__menu {
+        display: none;
 
-    &__menu &__menu-list .menu-item.current-menu-item a,
-    &__menu &__menu-list .menu-item.current-page-ancestor a {
-        padding-bottom: 5px;
-        border-bottom: 2px solid $beige;
-    }
+        @media #{$desktop} {
+            display: block;
+        }
 
-    &__menu &__menu-list .menu-item a {
-        color: $beige;
-        padding: 15px 0;
-        margin: 0 30px;
-        text-decoration: none;
-        text-transform: uppercase;
-    }
+        &-list {
+            display: flex;
+            padding: 0;
+            margin-bottom: 40px;
+            justify-content: center;
+            flex-direction: column;
+    
+            @media #{$ipad} {
+                flex-direction: row;
+            }
+        }
 
-    &__menu &__menu-list .menu-item a:hover {
-        padding-bottom: 5px;
-        border-bottom: 2px solid;
+        &-list .menu-item {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 27px;
+            list-style-type: none;
+        }
+
+        &-list .menu-item.current-menu-item a,
+        &-list .menu-item.current-page-ancestor a {
+            padding-bottom: 5px;
+            border-bottom: 2px solid $beige;
+        }
+
+        &-list .menu-item a {
+            color: $beige;
+            padding: 15px 0;
+            margin: 0 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        &-list .menu-item a:hover {
+            padding-bottom: 5px;
+            border-bottom: 2px solid;
+        }
     }
 }
-
-// $desktop
-// $widescreen
-// $mobileLandscap

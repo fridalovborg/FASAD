@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FASAD</title>
+    <title><?= get_bloginfo( 'name' ); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon -->
+    <!-- <link rel="icon" type="image/png" href="<?= get_stylesheet_directory_uri(); ?>/images/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="<?= get_stylesheet_directory_uri(); ?>/images/android-chrome-512x512.png" sizes="512x512">
+    <link rel="apple-touch-icon" type="image/png" href="<?= get_stylesheet_directory_uri(); ?>/images/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="<?= get_stylesheet_directory_uri(); ?>/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="<?= get_stylesheet_directory_uri(); ?>/images/favicon-32x32.png" sizes="32x32"> -->
 <?php
     wp_head();
 ?>
@@ -16,6 +23,10 @@
 <body class="fasad">
     <header class="header">
         <?php the_custom_logo() ?>
+
+        <div class="mobile-menu-logo mobile-menu-logo--js">
+            <?= file_get_contents( get_stylesheet_directory_uri() . '/images/menu.svg' ); ?>
+        </div>
 
         <?php
         wp_nav_menu(

@@ -1,4 +1,9 @@
 .child-menu {
+    display: none;
+
+    @media #{$desktop} {
+        display: block;
+    }
 
     &__list {
         display: flex;

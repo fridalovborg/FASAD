@@ -5,10 +5,14 @@
     padding-top: 25px;
     width: 90%;
 
+    margin-top: 70px;
+
     @media #{$desktop} {
         padding-top: 60px;
         width: 80%;
         margin-bottom: 105px;
+
+        margin-top: 0;
     }
 
     &__title {
