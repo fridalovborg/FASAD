@@ -1,0 +1,46 @@
+// Mobile menu icon
+.mobile-menu-logo--close {
+    display: none;
+}
+
+// Mobile menu icon - Active
+.mobile-menu-icon-active {
+    .mobile-menu-logo--close {
+        display: block;
+    }
+
+    .mobile-menu-logo--open {
+        display: none;
+    } 
+}
+
+// Mobile menu
+.mobile-menu {
+    display: none;
+	background: $ligtPink;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9;
+	overflow: scroll;
+	-webkit-owerflow-scrolling: touch;
+}
+
+// Mobile menu navigation
+.mobile__nav {
+    margin-top: 100px;
+
+    @media #{$desktop} {
+        display: none;
+    }
+
+    &-list {
+        padding: 0;
+
+        .menu-item {
+            list-style-type: none;
+        }    
+    }
+}

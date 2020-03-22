@@ -25,7 +25,8 @@
         <?php the_custom_logo() ?>
 
         <div class="mobile-menu-logo mobile-menu-logo--js">
-            <?= file_get_contents( get_stylesheet_directory_uri() . '/images/menu.svg' ); ?>
+            <div class="mobile-menu-logo--open"><?= file_get_contents( get_stylesheet_directory_uri() . '/images/menu.svg' ); ?></div>
+            <div class="mobile-menu-logo--close"><?= file_get_contents( get_stylesheet_directory_uri() . '/images/menu.svg' ); ?></div>
         </div>
 
         <?php
@@ -39,5 +40,17 @@
         );
         ?>
     </header> <!-- END: .header -->
+    <nav class="mobile-menu">
+        <?php
+        wp_nav_menu(
+            array(
+                'menu' => 'mobile-menu',
+                'container_class' => 'mobile__nav',
+                'menu_class' => 'mobile__nav-list',
+                'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+            )
+        );
+        ?>
+    </nav><!-- .menu -->
     <div class="fasad-main">
         <div class="fasad-main__container">
