@@ -3,7 +3,7 @@
 <head>
     <title><?= get_bloginfo( 'name' ); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="https://kit.fontawesome.com/e50c82b448.js" crossorigin="anonymous"></script>
     <!-- favicon -->
     <!-- <link rel="icon" type="image/png" href="<?= get_stylesheet_directory_uri(); ?>/images/android-chrome-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="<?= get_stylesheet_directory_uri(); ?>/images/android-chrome-512x512.png" sizes="512x512">

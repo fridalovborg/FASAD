@@ -30,7 +30,8 @@
 
 // Mobile menu navigation
 .mobile__nav {
-    margin-top: 100px;
+    width: calc(90% - 40px);
+    margin: 100px auto 30px;
 
     @media #{$desktop} {
         display: none;
@@ -40,7 +41,53 @@
         padding: 0;
 
         .menu-item {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 27px;
             list-style-type: none;
-        }    
+        }
+
+        .menu-item a {
+            color: $beige;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .menu-item.current-menu-item a,
+        .menu-item.current-page-ancestor a {
+            padding-bottom: 5px;
+            border-bottom: 2px solid $beige;
+        }
+
+        .menu-item a:hover {
+            padding-bottom: 5px;
+            border-bottom: 2px solid;
+        }
+    }
+
+    .menu-item-has-children {
+        position: relative;
+    }
+
+    .child-menu-icon {
+        height: 100%;
+        width: 47px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+    }
+
+    .child-menu-icon .fas {
+        line-height: 47px;
+    }
+
+    .sub-menu {
+        padding: 0 20px;
+        display: none;
     }
 }
