@@ -51,6 +51,6 @@
             )
         );
         ?>
-    </nav><!-- .menu -->
+    </nav><!-- .mobile-menu -->
     <div class="fasad-main">
         <div class="fasad-main__container">
