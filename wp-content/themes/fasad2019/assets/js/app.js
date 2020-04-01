@@ -20,7 +20,7 @@ import css from '../css/index.scss';
             if ($( '.header' ).hasClass( 'mobile-menu-icon-active' )) {
                 $( '.header' ).css( 'background', '#FFF9F5' );
             } else {
-                $( '.header' ).css( 'background', '#FFF' );
+                $( '.header' ).css( 'background', '#FFF9F5' );
             }
 
             // Child menu 

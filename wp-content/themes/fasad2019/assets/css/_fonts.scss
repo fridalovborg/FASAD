@@ -1,36 +1,46 @@
 .fasad {
-  font-family: Futura, Trebuchet MS, Arial, sans-serif;
-  color: $green;
+	font-family: Futura, Trebuchet MS, Arial, sans-serif;
+	color: $green;
 
-  // a,
-  // a:active,
-  // a:link,
-  // a:hover,
-  // a:visited {
-  //   text-decoration: underline;
-  // }
+	// a,
+	// a:active,
+	// a:link,
+	// a:hover,
+	// a:visited {
+	//   text-decoration: underline;
+	// }
 
-  p, 
-  em {
-    font-weight: 400;
-    line-height: 22px;
-    font-size: 18px;
-  }
+	p, 
+	em {
+		font-weight: 400;
+		line-height: 20px;
+		font-size: 16px;
 
-  strong, 
-  b {
-    font-weight: 700;
-  }
+		@media #{$ipad} {
+			font-size: 18px;
+			line-height: 22px;
+		}
+	}
 
-  h2 {
-    font-size: 30px;
-  }
+	strong, 
+	b {
+		font-weight: 700;
+	}
 
-  img {
-    max-width: 100%;
-  }
+	h2 {
+		font-size: 26px;
+		line-height: normal;
 
+		@media #{$ipad} {
+			font-size: 30px;
+		}
+	}
+
+	img {
+		max-width: 100%;
+	}
 }
+
 /**
 *
 * Desktop:
@@ -39,8 +49,7 @@
 *
 */
 
-
 .wp-admin .editor-post-title__block .editor-post-title__input,
 .wp-admin .editor-post-title__block .rich-text {
-  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+	font-family: Futura, Trebuchet MS, Arial, sans-serif;
 }

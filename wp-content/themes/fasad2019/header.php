@@ -25,8 +25,8 @@
         <?php the_custom_logo() ?>
 
         <div class="mobile-menu-logo mobile-menu-logo--js">
-            <div class="mobile-menu-logo--open"><?= file_get_contents( get_stylesheet_directory_uri() . '/images/menu.svg' ); ?></div>
-            <div class="mobile-menu-logo--close"><?= file_get_contents( get_stylesheet_directory_uri() . '/images/menu.svg' ); ?></div>
+            <div class="mobile-menu-logo--open"><?= file_get_contents( get_stylesheet_directory_uri() . '/images/mobile-menu-open.svg' ); ?></div>
+            <div class="mobile-menu-logo--close"><?= file_get_contents( get_stylesheet_directory_uri() . '/images/mobile-menu-close.svg' ); ?></div>
         </div>
 
         <?php
