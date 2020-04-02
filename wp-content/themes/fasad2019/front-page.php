@@ -1,8 +1,8 @@
 <?php
 get_header();
 
-    if ( have_posts() ) :
-        while ( have_posts() ) : the_post();
+    // if ( have_posts() ) :
+        // while ( have_posts() ) : the_post();
 ?>
             <div class="frontpage_container">
 <?php
@@ -10,12 +10,8 @@ get_header();
             while( have_rows('map') ): the_row();
                 $image = get_sub_field('image');
                 $link = get_sub_field('link');
-
-                // echo '<pre>';
-                // var_dump('image', $image);
-                // echo '</pre>';
 ?>
-                <div class="frontpage_container-item">
+                <div class="frontpage_container-item frontpage_container-item--map">
                     <a href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
                         <img src="<?= $image['sizes']['fasad_frontpage'] ?>" alt="<?= $image['description'] ?>">
                     </a>
@@ -27,14 +23,10 @@ get_header();
             while( have_rows('next_meting') ): the_row();
                 $text = get_sub_field('text');
                 $link = get_sub_field('link');
-
-                // echo '<pre>';
-                // var_dump('image', $text);
-                // echo '</pre>';
 ?>
-                <div class="frontpage_container-item">
-                    <a href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
-                        <p><?= $text ?></p>
+                <div class="frontpage_container-item frontpage_container-item--agenda">
+                    <a class="link" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
+                        <p class="text"><?= $text ?></p>
                     </a>
                 </div>
 <?php
@@ -43,10 +35,8 @@ get_header();
             // News
             // WP Query
 ?>
-                <div class="frontpage_container-item">
-                    <a href="">
-                        <p>News</p>
-                    </a>
+                <div class="frontpage_container-item frontpage_container-item--news">
+                    <?= latestPost(); ?>
                 </div>
 <?php
             // Let us know
@@ -55,10 +45,13 @@ get_header();
                 $text = get_sub_field('text');
                 $link = get_sub_field('link');
 ?>
-                <div class="frontpage_container-item">
-                    <a href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
-                        <h2><?= $title ?></h2>
-                        <p><?= $text ?></p>
+                <div class="frontpage_container-item frontpage_container-item--notice">
+                    <a class="link" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
+                        <div class="inner">
+                            <h2 class="title"><?= $title ?></h2>
+                            <hr class="line">
+                            <p class="text"><?= $text ?></p>
+                        </div>
                     </a>
                 </div>
 <?php
@@ -69,7 +62,7 @@ get_header();
                 $image = get_sub_field('image');
                 $link = get_sub_field('link');
 ?>
-                <div class="frontpage_container-item">
+                <div class="frontpage_container-item frontpage_container-item--manifest">
                     <a href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
                         <img src="<?= $image['sizes']['fasad_frontpage'] ?>" alt="<?= $image['description'] ?>">
                     </a>
@@ -83,10 +76,13 @@ get_header();
                 $text = get_sub_field('text');
                 $link = get_sub_field('link');
 ?>
-                <div class="frontpage_container-item">
-                    <a href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
-                        <h2><?= $title ?></h2>
-                        <p><?= $text ?></p>
+                <div class="frontpage_container-item frontpage_container-item--member">
+                    <a class="link" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
+                        <div class="inner">
+                            <h2 class="title"><?= $title ?></h2>
+                            <hr class="line">
+                            <p class="text"><?= $text ?></p>
+                        </div>
                     </a>
                 </div>
 <?php
@@ -94,6 +90,6 @@ get_header();
 ?>
             </div>
 <?php
-        endwhile;
-    endif;
+        // endwhile;
+    // endif;
 get_footer();

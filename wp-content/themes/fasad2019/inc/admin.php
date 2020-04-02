@@ -44,3 +44,33 @@ add_action( 'after_setup_theme', 'fasad_image_sized' );
 function fasad_image_sized() {
     add_image_size( 'fasad_frontpage', 400, 400, true );
 }
+
+//Latest posts
+function latestPost() {
+    $get_latest_post = array(
+        'post_type' => 'post',
+        'posts_per_page' => 1,
+        'order' => 'DESC',
+    );
+
+    $latest_post_query = new WP_Query( $get_latest_post );
+
+    if ( $latest_post_query->have_posts() ) {
+        while ( $latest_post_query->have_posts() ) {
+            $latest_post_query->the_post();
+
+            $link = get_the_permalink();
+            $title = get_the_title();
+            $image = get_the_post_thumbnail_url(get_the_ID(), 'fasad_frontpage');
+
+            echo '<a class="link" href="' . $link . '">';
+            echo '<div class="news-title-overlay"><h2 class="title">' . $title . '</h2></div>';
+            echo '<img src="' . $image . '" alt="Latest news image">';
+            echo '</a>';
+        } 
+        wp_reset_postdata();
+    }
+}
+
+//Feature image
+add_theme_support( 'post-thumbnails' );
