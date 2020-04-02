@@ -1,0 +1,9 @@
+.frontpage_container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+
+    &-item {
+        width: 33%;
+    }
+}

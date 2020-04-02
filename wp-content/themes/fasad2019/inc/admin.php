@@ -37,3 +37,10 @@ function acf_footer_settings() {
         ));
     }
 }
+
+// Image sizes
+add_action( 'after_setup_theme', 'fasad_image_sized' );
+
+function fasad_image_sized() {
+    add_image_size( 'fasad_frontpage', 400, 400, true );
+}
