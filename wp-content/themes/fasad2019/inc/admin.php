@@ -65,7 +65,7 @@ function latestPost() {
 
             echo '<a class="link" href="' . $link . '">';
             echo '<div class="news-title-overlay"><h2 class="title">' . $title . '</h2></div>';
-            echo '<img src="' . $image . '" alt="Latest news image">';
+            echo '<img class="image" src="' . $image . '" alt="Latest news image">';
             echo '</a>';
         } 
         wp_reset_postdata();

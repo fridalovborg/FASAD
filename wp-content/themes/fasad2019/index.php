@@ -4,6 +4,10 @@
         if ( have_posts() ) {
 
             // child menu
+            // echo '<pre>';
+            // var_dump($post->ancestors);
+            // echo '</pre>';
+
             if ( !$post->post_parent ) {
                 $children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
             } else {

@@ -45,6 +45,7 @@
             font-weight: 700;
             line-height: 27px;
             list-style-type: none;
+            margin-left: 35px;
         }
 
         > .menu-item > a {
@@ -84,7 +85,7 @@
     .sub-menu {
         padding: 0;
         display: none;
-        background: #FEF2EA;
+        background: $salmon;
 
         > .menu-item {
             font-size: 16px;
@@ -98,17 +99,27 @@
             text-transform: none;
             text-decoration: none;
             display: block;
-            width: calc(100% - 40px);
-            padding: 12px 20px;
+            width: calc(100% - 20px);
+            padding: 12px 10px;
+        }
+
+        > .menu-item > a:before {
+            content: '\2022';
+            margin-right: 7px;
+            color: $salmon;
         }
 
         // current sub menu
-        > .menu-item.current-menu-item {
-            background: $beige;
-        }
+        // > .menu-item.current-menu-item {
+        //     background: $beige;
+        // }
 
-        > .menu-item.current-menu-item > a {
-            color: #FEF2EA;
+        // > .menu-item.current-menu-item > a {
+        //     color: $salmon;
+        // }
+
+        > .menu-item.current-menu-item > a:before {
+            color: $beige;
         }
     }
 }

@@ -15,18 +15,10 @@
         width: 100%;
         max-width: 400px;
 
-        // @media #{$ipad} {
-        //     width: calc(50% - 20px);
-        // }
-
         @media #{$desktop} {
             width: calc(33.3% - 20px);
         }
     }
-
-    // &-item--map {
-        
-    // }
 
     &-item--agenda {
         .text {
@@ -36,32 +28,47 @@
             font-weight: 700;
             line-height: normal;
             margin: 0;
+            text-align: center;
+            margin: 0 auto;
         }
     }
     
     &-item--news {
         position: relative;
+        background-color: $ligtPink;
 
         .link {
             display: block;
+            padding: 20px;
         }
 
         .link:hover .news-title-overlay {
-            display: block;
+            opacity: 1;
+            transition: opacity 0.5s ease;
         }
 
         .news-title-overlay {
-            display: none;
-            background-color: rgba(255, 249, 245, 0.8);
-            bottom: 3px;
+            opacity: 0;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            background-color: $green;
             position: absolute;
-            width: 100%;
+        }
+
+        .image {
+            vertical-align: top;
         }
 
         .title {
+            font-size: 25px;
             margin: 0;
-            padding: 15px;
             color: $beige;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
         }
     }
 
@@ -81,10 +88,6 @@
             color: $ligtPink;
         }
     }
-
-    // &-item--manifest {
-
-    // }
 
     &-item--member {
         .title {
@@ -108,19 +111,34 @@
 
     &-item--member .title,
     &-item--notice .title {
-        font-size: 35px;
+        font-size: 30px;
         font-weight: bold;
         margin: 0;
         text-transform: uppercase;
+
+        @media #{$desktop} {
+            font-size: 25px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            font-size: 30px;
+        }
+
+        @media screen and (min-width: 1300px) {
+            font-size: 35px;
+        }
     }
 
     &-item--member .text,
     &-item--notice .text {
         font-style: italic;
+        margin-bottom: 0;
+        font-size: 16px;
     }
 
     .inner {
         padding: 15px;
+        overflow: hidden;
     }
 
     &-item--notice .link,
@@ -134,7 +152,7 @@
 
     .line {
         border: none;
-        height: 3px;
+        height: 2px;
         width: 60%;
     }
 }

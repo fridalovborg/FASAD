@@ -2,27 +2,31 @@
     background-color: $ligtPink;
     position: fixed;
     top: 0;
-    height: 70px;
+    // height: 70px;
+    height: 110px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 100;
-    // box-shadow: 1px 1px 4px;
+    // box-shadow: 1px 1px 6px $beige;
 
     @media #{$desktop} {
+        box-shadow: none;
         position: static;
         height: auto;
         flex-direction: column;
     }
 
     .custom-logo {
-        width: 200px;
+        width: 180px;
         height: auto;
 
         @media #{$desktop} {
-            width: 324px;
-            margin: 105px auto 60px;
+            // width: 324px;
+            // margin: 105px auto 60px;
+            width: 250px;
+            margin: 60px auto 30px;
         }
     }
 

@@ -1,19 +1,21 @@
 <?php
 get_header();
-
-    // if ( have_posts() ) :
-        // while ( have_posts() ) : the_post();
 ?>
             <div class="frontpage_container">
 <?php
-            // Map (image & link)
-            while( have_rows('map') ): the_row();
-                $image = get_sub_field('image');
+            // Introduction
+            while( have_rows('introduction') ): the_row();
+                $title = get_sub_field('title');
+                $text = get_sub_field('text');
                 $link = get_sub_field('link');
 ?>
-                <div class="frontpage_container-item frontpage_container-item--map">
-                    <a href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
-                        <img src="<?= $image['sizes']['fasad_frontpage'] ?>" alt="<?= $image['description'] ?>">
+                <div class="frontpage_container-item frontpage_container-item--member">
+                    <a class="link" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
+                        <div class="inner">
+                            <h1 class="title"><?= $title ?></h1>
+                            <hr class="line">
+                            <p class="text"><?= $text ?></p>
+                        </div>
                     </a>
                 </div>
 <?php
@@ -31,13 +33,11 @@ get_header();
                 </div>
 <?php
             endwhile;  
-
-            // News
-            // WP Query
 ?>
-                <div class="frontpage_container-item frontpage_container-item--news">
-                    <?= latestPost(); ?>
-                </div>
+            <!-- News -->
+            <div class="frontpage_container-item frontpage_container-item--news">
+                <?= latestPost(); ?>
+            </div>
 <?php
             // Let us know
             while( have_rows('let_us_know') ): the_row();
@@ -90,6 +90,4 @@ get_header();
 ?>
             </div>
 <?php
-        // endwhile;
-    // endif;
 get_footer();

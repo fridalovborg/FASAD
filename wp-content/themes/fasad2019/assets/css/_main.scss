@@ -3,17 +3,18 @@
 }
 
 .fasad-main {
-    background: #FEF2EA;
+    background: $ligtPink;
     display: block; 
     // margin: 0 auto 45px;
-    padding-top: 25px;
     width: 100%;
-    padding-top: 70px;
+    padding-top: 100px;
 
     @media #{$desktop} {
+        background: $salmon;
         padding-top: 60px;
         width: 80%;
-        margin: 0 auto 105px;
+        // margin: 0 auto 105px;
+        margin: 0 auto 60px;
     }
 
     &__title {
