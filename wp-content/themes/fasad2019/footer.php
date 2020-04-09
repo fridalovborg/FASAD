@@ -7,15 +7,18 @@
                 $collaboration = get_field('collaboration', 'option');
                 $social_media = get_field('social_media', 'option');
 
-                if( $social_media ):
+                if( $social_media ) :
                     echo '<div class="fasad-footer__item">';
                     echo '<h4>' . esc_html( $social_media['title'] ) . '</h4>';
                     $links = $social_media['add_link'];
-                    foreach ($links as $link) :
-                        echo '<a href="' . esc_url( $link['link']['url'] ) . '" target="' . esc_attr( $link['link']['target'] ) . '">';
-                        echo esc_html( $link['link']['title'] );
-                        echo ' </a>';
-                    endforeach;
+
+                    if ($links) :
+                        foreach ($links as $link) :
+                            echo '<a class="socialmedia-link" href="' . esc_url( $link['link']['url'] ) . '" target="' . esc_attr( $link['link']['target'] ) . '">';
+                            echo esc_html( $link['link']['title'] );
+                            echo ' </a>';
+                        endforeach;
+                    endif;
                     echo '</div>';
                 endif;
 
@@ -23,11 +26,14 @@
                     echo '<div class="fasad-footer__item">';
                     echo '<h4>' . esc_html( $collaboration['title'] ) . '</h4>';
                     $links = $collaboration['add_link'];
-                    foreach ($links as $link) :
-                        echo '<a href="' . esc_url( $link['link']['url'] ) . '" target="' . esc_attr( $link['link']['target'] ) . '">';
-                        echo esc_html( $link['link']['title'] );
-                        echo ' </a>';
-                    endforeach;
+
+                    if ($links) :
+                        foreach ($links as $link) :
+                            echo '<a class="collaboration-link" href="' . esc_url( $link['link']['url'] ) . '" target="' . esc_attr( $link['link']['target'] ) . '">';
+                            echo esc_html( $link['link']['title'] );
+                            echo '</a>';
+                        endforeach;
+                    endif;  
                     echo '</div>';
                 endif;
                 

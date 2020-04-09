@@ -26,4 +26,17 @@
             justify-content: space-between;
         }
     }
+
+    &__item .collaboration-link:after {
+        content: ', ';
+    }
+
+    &__item .collaboration-link:last-child:after {
+        content: '';
+    }
+
+    &__item .socialmedia-link {
+        display: block;
+        margin-bottom: 5px;
+    }
 }
