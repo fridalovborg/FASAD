@@ -16,13 +16,6 @@ import css from '../css/index.scss';
                 $( '.mobile-menu' ).fadeOut();
             }
 
-            // Remove box shadow when menu is open
-            if ($( '.header' ).hasClass( 'mobile-menu-icon-active' )) {
-                $( '.header' ).css( 'box-shadow', 'none' );
-            } else {
-                $( '.header' ).css( 'box-shadow', '1px 1px 6px #BEAF9A' );
-            }
-
             // Child menu fontawesome icon
             if ($( '.menu-item' ).hasClass( 'menu-item-has-children' )) {
                 $('.menu-item.menu-item-has-children').append('<span class="child-menu-icon child-menu-icon--js"><i class="fas fa-chevron-down"></i></span>');
