@@ -1,0 +1,13 @@
+@keyframes increase-line {
+    0% {
+        width: 60%;
+    }
+
+    50% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}

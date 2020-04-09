@@ -29,6 +29,7 @@ get_header();
                 <div class="frontpage_container-item frontpage_container-item--agenda">
                     <a class="link" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
                         <p class="text"><?= $text ?></p>
+                        <hr class="line">
                     </a>
                 </div>
 <?php
@@ -60,10 +61,12 @@ get_header();
             // Manifest
             while( have_rows('manifest') ): the_row();
                 $image = get_sub_field('image');
+                $title = get_sub_field('title');
                 $link = get_sub_field('link');
 ?>
                 <div class="frontpage_container-item frontpage_container-item--manifest">
-                    <a href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
+                    <a class="link" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
+                        <div class="news-title-overlay"><h2 class="title"><?= $title?></h2></div>
                         <img src="<?= $image['sizes']['fasad_frontpage'] ?>" alt="<?= $image['description'] ?>">
                     </a>
                 </div>

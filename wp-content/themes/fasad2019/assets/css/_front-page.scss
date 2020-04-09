@@ -21,6 +21,10 @@
     }
 
     &-item--agenda {
+        .link {
+            flex-direction: column;
+        }
+
         .text {
             color: $beige;
             font-size: 57px;
@@ -30,16 +34,116 @@
             margin: 0;
             text-align: center;
             margin: 0 auto;
+
+            @media #{$desktop} {
+                font-size: 50px;
+            }
+
+            @media #{$largeDeskop} {
+                font-size: 57px;
+            }
+        }
+
+        .line {
+            color: $beige;
+            background-color: $beige;
         }
     }
-    
-    &-item--news {
+
+    &-item--notice {
+        background-color: $mint;
+
+        .title,
+        .text,
+        .line {
+            color: $ligtPink;
+        }
+
+        .line {
+            background-color: $ligtPink;
+        }
+    }
+
+    &-item--member {
+        .title,
+        .text,
+        .line {
+            color: $green;
+        }
+
+        .line {
+            background-color: $green;
+        }
+    }
+
+    &-item--member,
+    &-item--notice {
+        text-align: center;
+
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0;
+            text-transform: uppercase;
+
+            @media #{$desktop} {
+                font-size: 25px;
+            }
+
+            @media #{$largeDeskop} {
+                font-size: 30px;
+            }
+
+            @media screen and (min-width: 1300px) {
+                font-size: 35px;
+            }
+        }
+
+        .text {
+            font-style: italic;
+            margin-bottom: 0;
+            font-size: 16px;
+            line-height: normal;
+
+            @media #{$desktop} {
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+            @media #{$largeDeskop} {
+                font-size: 16px;
+                line-height: normal;
+            }
+        }
+    }
+
+    &-item--notice,
+    &-item--member,
+    &-item--agenda {
+        .link {
+            height: 100%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .link:hover .line {
+            animation: increase-line 1s;
+        }
+    }
+
+    &-item--news,
+    &-item--manifest {
         position: relative;
         background-color: $ligtPink;
 
         .link {
             display: block;
-            padding: 20px;
+
+            @media #{$desktop} {
+                padding: 20px;
+            }
         }
 
         .link:hover .news-title-overlay {
@@ -49,18 +153,19 @@
 
         .news-title-overlay {
             opacity: 0;
-            width: calc(100% - 40px);
-            height: calc(100% - 40px);
+            width: 100%;
+            height: 100%;
             background-color: $green;
             position: absolute;
-        }
 
-        .image {
-            vertical-align: top;
+            @media #{$desktop} {
+                width: calc(100% - 40px);
+                height: calc(100% - 40px);
+            }
         }
 
         .title {
-            font-size: 25px;
+            font-size: 18px;
             margin: 0;
             color: $beige;
             text-align: center;
@@ -70,84 +175,15 @@
             transform: translate(-50%, -50%);
             width: 100%;
         }
-    }
 
-    &-item--notice {
-        background-color: $mint;
-
-        .title {
-            color: $ligtPink;
+        .image {
+            vertical-align: top;
         }
-
-        .line {
-            color: $ligtPink;
-            background-color: $ligtPink;
-        }
-
-        .text {
-            color: $ligtPink;
-        }
-    }
-
-    &-item--member {
-        .title {
-            color: $green;
-        }
-
-        .line {
-            color: $green;
-            background-color: $green;
-        }
-
-        .text {
-            color: $green;
-        }
-    }
-
-    &-item--notice,
-    &-item--member {
-        text-align: center;
-    }
-
-    &-item--member .title,
-    &-item--notice .title {
-        font-size: 30px;
-        font-weight: bold;
-        margin: 0;
-        text-transform: uppercase;
-
-        @media #{$desktop} {
-            font-size: 25px;
-        }
-
-        @media screen and (min-width: 1200px) {
-            font-size: 30px;
-        }
-
-        @media screen and (min-width: 1300px) {
-            font-size: 35px;
-        }
-    }
-
-    &-item--member .text,
-    &-item--notice .text {
-        font-style: italic;
-        margin-bottom: 0;
-        font-size: 16px;
     }
 
     .inner {
         padding: 15px;
         overflow: hidden;
-    }
-
-    &-item--notice .link,
-    &-item--member .link,
-    &-item--agenda .link {
-        height: 100%;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
     }
 
     .line {
