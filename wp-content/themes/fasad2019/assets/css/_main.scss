@@ -4,8 +4,7 @@
 
 .fasad-main {
     background: $ligtPink;
-    display: block; 
-    // margin: 0 auto 45px;
+    display: block;
     width: 100%;
     padding-top: 100px;
 
@@ -13,12 +12,11 @@
         background: $salmon;
         padding-top: 60px;
         width: 80%;
-        // margin: 0 auto 105px;
         margin: 0 auto 60px;
     }
 
     &__title {
-        color: $mint;
+        color: $green;
         margin-bottom: 30px;
 
         @media #{$desktop} {
