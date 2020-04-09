@@ -13,9 +13,16 @@
         width: 100%;
         background: transparent;
         border: none;
-        outline: none;
         color: $ligtPink;
         padding-top: 10px;
+    }
+
+    input:focus,
+    textarea:focus {
+        outline-color: $ligtPink;
+        outline-offset: -2px;
+        outline-style: auto;
+        outline-width: 5px;
     }
 
     label {

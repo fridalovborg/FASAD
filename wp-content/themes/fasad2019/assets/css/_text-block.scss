@@ -1,3 +1,9 @@
-.text-block p:first-child {
-    margin-top: 0;
+.text-block {
+    p {
+        line-height: normal;
+    }
+
+    p:first-child {
+        margin-top: 0;
+    }
 }
