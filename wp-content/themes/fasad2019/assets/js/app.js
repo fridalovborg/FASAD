@@ -25,12 +25,12 @@ import css from '../css/index.scss';
             $( '.child-menu-icon--js' ).on( 'click' , function( e ) {
                 var submenu = $(this).siblings('.sub-menu');
 
-                if ($(submenu).is(':hidden')) {
-                    $(submenu).slideDown(200);
-                    $( '.child-menu-icon--js > .fas' ).css( 'transform', 'rotate(180deg)' );
+                if ($( submenu ).is( ':hidden' )) {
+                    $( submenu ).slideDown(200);
+                    // $( rotateIcon ).css( 'transform', 'rotate(180deg)' );
                 } else {
-                    $(submenu).slideUp(200);
-                    $( '.child-menu-icon--js > .fas' ).css( 'transform', 'rotate(0deg)' );
+                    $( submenu ).slideUp(200);
+                    // $( rotateIcon ).css( 'transform', 'rotate(0deg)' );
                 }
             });
 
