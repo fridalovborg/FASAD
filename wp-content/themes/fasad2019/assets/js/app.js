@@ -25,29 +25,26 @@ import css from '../css/index.scss';
             $( '.child-menu-icon--js' ).on( 'click' , function( e ) {
                 var submenu = $(this).siblings('.sub-menu');
 
-                if ($( submenu ).is( ':hidden' )) {
-                    $( submenu ).slideDown(200);
-                    // $( rotateIcon ).css( 'transform', 'rotate(180deg)' );
+                if ($(submenu).is(':hidden')) {
+                    $(submenu).slideDown(200);
+                    // $( '.child-menu-icon--js > .fas' ).css( 'transform', 'rotate(180deg)' );
                 } else {
-                    $( submenu ).slideUp(200);
-                    // $( rotateIcon ).css( 'transform', 'rotate(0deg)' );
+                    $(submenu).slideUp(200);
+                    // $( '.child-menu-icon--js > .fas' ).css( 'transform', 'rotate(0deg)' );
                 }
             });
 
             // Child menu current sub menu item
-            if ($( '.sub-menu > .menu-item' ).hasClass( 'current-menu-item' )) {
-                $( '.sub-menu' ).css( 'display', 'block' );
-            } else {
-                $( '.sub-menu' ).css( 'display', 'none' );
-            }
+            var currentmenuItem = $('.menu-item.current-menu-item');
+            $(currentmenuItem).parent('.sub-menu').css('display', 'block');
 
             // Rotate child menu arrow
-            if ( $( '.sub-menu' ).is( ':hidden' )) {
-                $( '.child-menu-icon--js > .fas' ).css( 'transform', 'rotate(0deg)' );
-            } 
-            else {
-                $( '.child-menu-icon--js > .fas' ).css( 'transform', 'rotate(180deg)' );
-            }
+            // if ( $( '.sub-menu' ).is( ':hidden' )) {
+            //     $( '.child-menu-icon--js > .fas' ).css( 'transform', 'rotate(180deg)' );
+            // } 
+            // else {
+            //     $( '.child-menu-icon--js > .fas' ).css( 'transform', 'rotate(0deg)' );
+            // }
         });
     });
 })(jQuery);

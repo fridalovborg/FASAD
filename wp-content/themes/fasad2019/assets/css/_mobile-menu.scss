@@ -45,7 +45,6 @@
             font-weight: 700;
             line-height: 27px;
             list-style-type: none;
-            margin-left: 35px;
         }
 
         > .menu-item > a {
@@ -59,8 +58,12 @@
 
         > .menu-item.current-page-ancestor,
         > .menu-item.current-menu-item {
-            list-style-type: disc;
             color: $beige;
+        }
+
+        > .menu-item.current-page-ancestor > a,
+        > .menu-item.current-menu-item > a {
+            border-bottom: 1px solid $beige;
         }
     }
 
