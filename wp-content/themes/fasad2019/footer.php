@@ -9,7 +9,7 @@
 
                 if( $social_media ) :
                     echo '<div class="fasad-footer__item">';
-                    echo '<h4>' . esc_html( $social_media['title'] ) . '</h4>';
+                    echo '<h3 class="fasad-footer__item-title">' . esc_html( $social_media['title'] ) . '</h3>';
                     $links = $social_media['add_link'];
 
                     if ($links) :
@@ -24,7 +24,7 @@
 
                 if( $collaboration ): 
                     echo '<div class="fasad-footer__item">';
-                    echo '<h4>' . esc_html( $collaboration['title'] ) . '</h4>';
+                    echo '<h3 class="fasad-footer__item-title">' . esc_html( $collaboration['title'] ) . '</h3>';
                     $links = $collaboration['add_link'];
 
                     if ($links) :
@@ -33,13 +33,13 @@
                             echo esc_html( $link['link']['title'] );
                             echo '</a>';
                         endforeach;
-                    endif;  
+                    endif;
                     echo '</div>';
                 endif;
                 
                 if( $contact ):
                     echo '<div class="fasad-footer__item">';
-                    echo '<h4>' . esc_html( $contact['title'] ) . '</h4>';
+                    echo '<h3 class="fasad-footer__item-title">' . esc_html( $contact['title'] ) . '</h3>';
                     echo '<a href="' . esc_url( $contact['link']['url'] ) . '" '.( $contact['link']['target'] ? 'target="' . esc_attr( $contact['link']['target'] ) . '"' : '').'>';
                     echo esc_html( $contact['link']['title'] );
                     echo '</a>';
