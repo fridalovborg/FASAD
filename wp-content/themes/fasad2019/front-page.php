@@ -9,8 +9,9 @@ get_header();
                 $text = get_sub_field('text');
                 $link = get_sub_field('link');
 ?>
+                
                 <div class="frontpage_container-item frontpage_container-item--member">
-                    <a class="link" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
+                    <a class="link" href="<?= $link['url'] ?>" <?= ($link['target'] ? 'target="' . $link['target'] . '"' : '') ?>>
                         <div class="inner">
                             <h1 class="title"><?= $title ?></h1>
                             <hr class="line">
@@ -27,7 +28,7 @@ get_header();
                 $link = get_sub_field('link');
 ?>
                 <div class="frontpage_container-item frontpage_container-item--agenda">
-                    <a class="link" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
+                    <a class="link" href="<?= $link['url'] ?>" <?= ($link['target'] ? 'target="' . $link['target'] . '"' : '') ?>>
                         <p class="text"><?= $text ?></p>
                         <hr class="line">
                     </a>
@@ -47,7 +48,7 @@ get_header();
                 $link = get_sub_field('link');
 ?>
                 <div class="frontpage_container-item frontpage_container-item--notice">
-                    <a class="link" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
+                    <a class="link" href="<?= $link['url'] ?>" <?= ($link['target'] ? 'target="' . $link['target'] . '"' : '') ?>>
                         <div class="inner">
                             <h2 class="title"><?= $title ?></h2>
                             <hr class="line">
@@ -65,7 +66,7 @@ get_header();
                 $link = get_sub_field('link');
 ?>
                 <div class="frontpage_container-item frontpage_container-item--manifest">
-                    <a class="link" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
+                    <a class="link" href="<?= $link['url'] ?>" <?= ($link['target'] ? 'target="' . $link['target'] . '"' : '') ?>>
                         <div class="news-title-overlay"><h2 class="title"><?= $title?></h2></div>
                         <img src="<?= $image['sizes']['fasad_frontpage'] ?>" alt="<?= $image['description'] ?>">
                     </a>
@@ -80,7 +81,7 @@ get_header();
                 $link = get_sub_field('link');
 ?>
                 <div class="frontpage_container-item frontpage_container-item--member">
-                    <a class="link" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>">
+                    <a class="link" href="<?= $link['url'] ?>" <?= ($link['target'] ? 'target="' . $link['target'] . '"' : '') ?>>
                         <div class="inner">
                             <h2 class="title"><?= $title ?></h2>
                             <hr class="line">

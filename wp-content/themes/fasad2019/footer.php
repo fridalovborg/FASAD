@@ -14,7 +14,7 @@
 
                     if ($links) :
                         foreach ($links as $link) :
-                            echo '<a class="socialmedia-link" href="' . esc_url( $link['link']['url'] ) . '" target="' . esc_attr( $link['link']['target'] ) . '">';
+                            echo '<a class="socialmedia-link" href="' . esc_url( $link['link']['url'] ) . '" '.( $link['link']['target'] ? 'target="' . esc_attr( $link['link']['target'] ) . '"' : '').'>';
                             echo esc_html( $link['link']['title'] );
                             echo ' </a>';
                         endforeach;
@@ -29,7 +29,7 @@
 
                     if ($links) :
                         foreach ($links as $link) :
-                            echo '<a class="collaboration-link" href="' . esc_url( $link['link']['url'] ) . '" target="' . esc_attr( $link['link']['target'] ) . '">';
+                            echo '<a class="collaboration-link" href="' . esc_url( $link['link']['url'] ) . '" '.( $link['link']['target'] ? 'target="' . esc_attr( $link['link']['target'] ) . '"' : '').'>';
                             echo esc_html( $link['link']['title'] );
                             echo '</a>';
                         endforeach;
@@ -40,7 +40,7 @@
                 if( $contact ):
                     echo '<div class="fasad-footer__item">';
                     echo '<h4>' . esc_html( $contact['title'] ) . '</h4>';
-                    echo '<a href="' . esc_url( $contact['link']['url'] ) . '" target="' . esc_attr( $contact['link']['target'] ) . '">';
+                    echo '<a href="' . esc_url( $contact['link']['url'] ) . '" '.( $contact['link']['target'] ? 'target="' . esc_attr( $contact['link']['target'] ) . '"' : '').'>';
                     echo esc_html( $contact['link']['title'] );
                     echo '</a>';
                     echo '</div>';

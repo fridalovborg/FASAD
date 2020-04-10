@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
 <head>
     <title><?= get_bloginfo( 'name' ); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,6 +48,8 @@
                 'container_class' => 'mobile__nav',
                 'menu_class' => 'mobile__nav-list',
                 'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+                'link_before' => '<h3 class="mobile__nav-item">',
+                'link_after' => '</h3>',
             )
         );
         ?>

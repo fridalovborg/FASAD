@@ -61,10 +61,14 @@
             color: $beige;
         }
 
-        > .menu-item.current-page-ancestor > a,
-        > .menu-item.current-menu-item > a {
-            border-bottom: 1px solid $beige;
+        > .menu-item.current-menu-item > a > .mobile__nav-item {
+            border-bottom: 2px solid $beige;
         }
+    }
+
+    &-item {
+        margin: 0;
+        width: max-content;
     }
 
     .menu-item-has-children {
@@ -78,7 +82,7 @@
         right: 0;
         top: 0;
         text-align: center;
-        color: $green;
+        color: $beige;
     }
 
     .child-menu-icon .fas {
@@ -106,23 +110,8 @@
             padding: 12px 10px;
         }
 
-        > .menu-item > a:before {
-            content: '\2022';
-            margin-right: 7px;
-            color: $salmon;
-        }
-
-        // current sub menu
-        // > .menu-item.current-menu-item {
-        //     background: $beige;
-        // }
-
-        // > .menu-item.current-menu-item > a {
-        //     color: $salmon;
-        // }
-
-        > .menu-item.current-menu-item > a:before {
-            color: $beige;
+        > .menu-item.current-menu-item > a > .mobile__nav-item {
+            border-bottom: 2px solid $beige;
         }
     }
 }
