@@ -32,6 +32,10 @@
                             echo '<a class="collaboration-link" href="' . esc_url( $link['link']['url'] ) . '" '.( $link['link']['target'] ? 'target="' . esc_attr( $link['link']['target'] ) . '"' : '').'>';
                             echo esc_html( $link['link']['title'] );
                             echo '</a>';
+
+                            if ( next( $links ) ) {
+                                echo ', ';
+                            }
                         endforeach;
                     endif;
                     echo '</div>';
