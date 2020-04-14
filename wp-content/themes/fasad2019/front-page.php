@@ -67,8 +67,9 @@ get_header();
 ?>
                 <div class="frontpage_container-item frontpage_container-item--manifest">
                     <a class="link" href="<?= $link['url'] ?>" <?= ($link['target'] ? 'target="' . $link['target'] . '"' : '') ?>>
-                        <div class="news-title-overlay"><h2 class="title"><?= $title?></h2></div>
-                        <img src="<?= $image['sizes']['fasad_frontpage'] ?>" alt="<?= $image['description'] ?>">
+                        <div class="news-title-overlay"></div>
+                        <h2 class="title"><?= $title?></h2>
+                        <img class="image" src="<?= $image['sizes']['fasad_frontpage'] ?>" alt="<?= $image['description'] ?>">
                     </a>
                 </div>
 <?php
