@@ -1,5 +1,10 @@
 .fasad {
     background-color: $ligtPink;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 }
 
 .fasad-main {

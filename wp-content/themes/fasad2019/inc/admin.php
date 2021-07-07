@@ -75,3 +75,68 @@ function latestPost() {
 
 //Feature image
 add_theme_support( 'post-thumbnails' );
+
+// CPT
+add_action( 'init', 'cpt_aktiviteter' );
+add_action( 'init', 'cpt_aktuella' );
+add_action( 'init', 'cpt_debatt' );
+
+function cpt_aktiviteter() {
+    register_post_type( 'aktiviteter',
+        array(
+            'labels' => array(
+                'name' => __( 'Aktiviteter' ),
+                'singular_name' => __( 'Aktiviteter' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'aktiviteter'),
+            'show_in_rest' => true,
+            'supports' => array( 'title', 'thumbnail', 'editor', 'custom-fields' ),
+            'taxonomies' => array( 'post_tag' ),
+        )
+    );
+}
+
+function cpt_aktuella() {
+    register_post_type( 'aktuella',
+        array(
+            'labels' => array(
+                'name' => __( 'Aktuella fall' ),
+                'singular_name' => __( 'Aktuella fall' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'aktuella-fall'),
+            'show_in_rest' => true,
+            'supports' => array( 'title', 'thumbnail', 'editor', 'custom-fields' ),
+            'taxonomies' => array( 'post_tag' ),
+        )
+    );
+}
+
+function cpt_debatt() {
+    register_post_type( 'debatt',
+        array(
+            'labels' => array(
+                'name' => __( 'Debatt' ),
+                'singular_name' => __( 'Debatt' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'debatt'),
+            'show_in_rest' => true,
+            'supports' => array( 'title', 'thumbnail', 'editor', 'custom-fields' ),
+            'taxonomies' => array( 'post_tag' ),
+        )
+    );
+}
+
+// Force cpt taxonomy to use archive.php
+function wpse28145_add_custom_types( $query ) {
+    if( is_tag() && $query->is_main_query() ) {
+        $post_types = get_post_types();
+        $query->set( 'post_type', $post_types );
+    }
+}
+add_filter( 'pre_get_posts', 'wpse28145_add_custom_types' );
