@@ -16,28 +16,27 @@
         }
     }
 
-    .page_item {
+    li {
         list-style-type: none;
     }
 
-    .page_item a {
+    li a {
         color: $beige;
-        text-decoration: none;
 
         @media #{$ipad} {
             margin: 0 30px;
         }
     }
 
-    .page_item:first-child a {
+    li:first-child a {
         margin-left: 0;
     }
 
-    .page_item:last-child a {
+    li:last-child a {
         margin-right: 0;
     }
 
-    .page_item a:hover {
+    li a:hover {
         border-bottom: 1px solid $beige;
         padding-bottom: 2px;
     }

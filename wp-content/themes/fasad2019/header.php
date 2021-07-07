@@ -31,6 +31,7 @@
                 'container_class' => 'header__menu',
                 'menu_class' => 'header__menu-list',
                 'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+                'depth' => 1,
             )
         );
         ?>

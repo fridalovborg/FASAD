@@ -15,11 +15,6 @@
 		font-weight: 400;
 		line-height: 20px;
 		font-size: 16px;
-
-		@media #{$ipad} {
-			font-size: 18px;
-			line-height: 22px;
-		}
 	}
 
 	strong, 
