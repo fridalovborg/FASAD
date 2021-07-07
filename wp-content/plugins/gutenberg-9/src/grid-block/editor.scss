@@ -6,12 +6,12 @@
  */
 
 /* Parent */
-.edit-grid-block .editor-inner-blocks .block-editor-block-list__layout,
-.edit-grid-column .editor-inner-blocks .block-editor-block-list__layout {
+.edit-grid-block .block-editor-inner-blocks .block-editor-block-list__layout,
+.edit-grid-column .block-editor-inner-blocks .block-editor-block-list__layout {
 	display: flex !important;
 }
 
-.edit-grid-column .editor-inner-blocks .block-editor-block-list__layout {
+.edit-grid-column .block-editor-inner-blocks .block-editor-block-list__layout {
 	flex-direction: column;
 }
 
