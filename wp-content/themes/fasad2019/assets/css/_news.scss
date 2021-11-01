@@ -1,50 +1,68 @@
 .fasad-news {
     color: $green;
 
-    &__item {
-        background-color: $salmon;
-        display: flex;
-        flex-direction: column;
-        margin: 40px 0;
-        padding: 20px;
-
-        @media #{$desktop} {
-            background-color: $ligtPink;
-            flex-direction: row;
-            padding: 40px;
-        }
-
-        &.reverse-order {
-            @media #{$desktop} {
-                flex-direction: row-reverse;
-
-                .fasad-news__item-content {
-                    padding: 0 30px 0 0;
-                }
+    &__filter {
+        margin-bottom: 50px;
+        &--item {
+            margin-right: 30px;
+            &:hover {
+                border-bottom: 2px solid;
+                padding-bottom: 2px;
             }
         }
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    &__item {
+        width: 100%;
+        // display: flex;
+        // flex-direction: column;
+        // margin: 40px 0;
+        // padding: 20px;
+
+        @media #{$desktop} {
+            width: calc(100% / 3);
+            // padding: 0.5rem;
+            box-sizing: border-box;
+            // background-color: $ligtPink;
+            // flex-direction: row;
+            // padding: 40px;
+        }
+
+        // &.reverse-order {
+        //     @media #{$desktop} {
+        //         flex-direction: row-reverse;
+
+        //         .fasad-news__item-content {
+        //             padding: 0 30px 0 0;
+        //         }
+        //     }
+        // }
 
         &-content,
         &-image {
-            width: 100%;
-
-            @media #{$desktop} {
-                width: 50%;
-            }
+            // width: 100%;
+            // @media #{$desktop} {
+            //     width: 50%;
+            // }
         }
 
         &-content {
-            margin-top: 24px; 
+            max-width: 400px;
+            // margin-top: 24px; 
 
-            @media #{$desktop} {
-                margin-top: 0;
-                padding: 0 0 0 30px;
-            }
+            // @media #{$desktop} {
+            //     margin-top: 0;
+            //     padding: 0 0 0 30px;
+            // }
         }
 
         &-title {
-            font-size: 30px;
-            margin-top: 0;
+            font-size: 18px;
         }
 
         &-etikett {
@@ -54,10 +72,14 @@
     }
 
     &__link {
+        background-color: $ligtPink;
+        display: block;
         color: inherit;
 
-        &:hover {
-            .fasad-news__item {
+        @media #{$desktop} {
+            padding: 1.5rem;
+
+            &:hover {
                 box-shadow: 0px 10px 80px rgba(0, 0, 0, 0.05);
             }
         }

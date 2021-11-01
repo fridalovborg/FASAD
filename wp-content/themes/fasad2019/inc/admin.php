@@ -93,13 +93,12 @@ function cpt_aktiviteter() {
             'rewrite' => array('slug' => 'aktiviteter'),
             'show_in_rest' => true,
             'supports' => array( 'title', 'thumbnail', 'editor', 'custom-fields' ),
-            'taxonomies' => array( 'post_tag' ),
         )
     );
 }
 
 function cpt_aktuella() {
-    register_post_type( 'aktuella',
+    register_post_type('aktuella',
         array(
             'labels' => array(
                 'name' => __( 'Aktuella fall' ),
@@ -109,10 +108,26 @@ function cpt_aktuella() {
             'has_archive' => true,
             'rewrite' => array('slug' => 'aktuella-fall'),
             'show_in_rest' => true,
+            'taxonomies' => array('post_tag' => 'category'),
             'supports' => array( 'title', 'thumbnail', 'editor', 'custom-fields' ),
-            'taxonomies' => array( 'post_tag' ),
         )
     );
+
+    // register_taxonomy('categories-aktuella',
+    //     array('aktuella'),
+    //     array(
+    //         'hierarchical' => true, 
+    //         'label' => 'Categories', 
+    //         'singular_label' => 'Category',
+    //         'show_in_rest' => true,
+    //         'rewrite' => array(
+    //             'slug' => 'categories',
+    //             'with_front' => false
+    //         )
+    //     )
+    // );
+
+    // register_taxonomy_for_object_type( 'categories-aktuella', 'aktuella' );
 }
 
 function cpt_debatt() {
@@ -127,7 +142,6 @@ function cpt_debatt() {
             'rewrite' => array('slug' => 'debatt'),
             'show_in_rest' => true,
             'supports' => array( 'title', 'thumbnail', 'editor', 'custom-fields' ),
-            'taxonomies' => array( 'post_tag' ),
         )
     );
 }

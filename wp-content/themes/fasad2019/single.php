@@ -11,7 +11,7 @@
                 endwhile;
             }
         ?>
-        <a class="fasad-news__single--go-back-link" href="<?= get_permalink( get_option( 'page_for_posts' ) ); ?>"><h3>< Tillbaka till nyheter</h3></a>
+        <a class="fasad-news__single--go-back-link" href="<?= get_post_type_archive_link(get_post_type()) ?>"><h3>< Tillbaka till <?= get_post_type_object(get_post_type())->label ?></h3></a>
     </div> <!-- END: .fasad-news__single -->
 <?php
     get_footer();
