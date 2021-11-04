@@ -15,19 +15,15 @@
     &__list {
         display: flex;
         flex-flow: row wrap;
+        margin: 0 -1rem;
     }
 
     &__item {
-        width: 100%;
-        // display: flex;
-        // flex-direction: column;
-        // margin: 40px 0;
-        // padding: 20px;
+        margin: 1rem;
 
         @media #{$desktop} {
-            width: calc(100% / 3);
+            width: calc(100% / 3 - 2rem);
             // padding: 0.5rem;
-            box-sizing: border-box;
             // background-color: $ligtPink;
             // flex-direction: row;
             // padding: 40px;
