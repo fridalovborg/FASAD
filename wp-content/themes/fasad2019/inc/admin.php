@@ -48,7 +48,7 @@ function fasad_image_sized() {
 //Latest posts
 function latestPost() {
     $get_latest_post = array(
-        'post_type' => 'post',
+        'post_type' => 'debatt',
         'posts_per_page' => 1,
         'order' => 'DESC',
     );
@@ -163,4 +163,10 @@ function better_editions_archive( $query ) {
         $query->set( 'post_type', array( 'aktuella', 'debatt', 'aktiviteter' ) );
     }
     return $query;
+}
+
+// Remove WP Posts from admin menu
+add_action('admin_menu', 'post_remove');
+function post_remove() { 
+   remove_menu_page('edit.php');
 }

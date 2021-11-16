@@ -51,15 +51,16 @@
                     echo '<div class="fasad-news__item">';
                     echo '<a class="fasad-news__link" href="' . $post_page_link . '">';
                     echo '<img class="image fasad-news__item-image" src="' . $image . '" alt="' . $title . '">';
-                    echo '<div class="fasad-news__item-content">';
-                    if ($etikett) {
-                        echo '<p class="fasad-news__item-etikett">' . $etikett . '</p>';
-                    }
-                    echo '<h3 class="fasad-news__item-title">' . $title . '</h3>';
-                    
-                    echo '<p>' . wp_trim_words( get_the_content(), 20, '...' ) . '</p>';
-                    echo '</div>';
                     echo '</a>';
+                    echo '<div class="fasad-news__item-content">';
+                    echo '<a class="fasad-news__link" href="' . $post_page_link . '">';
+                    echo '<h3 class="fasad-news__item-title">' . $title . '</h3>';
+                    echo '<p>' . wp_trim_words( get_the_content(), 20, '...' ) . '</p>';
+                    echo '</a>';
+                    echo '</div>';
+                    echo '<div class="fasad-news__etikett">';
+                    the_category();
+                    echo '</div>';
                     echo '</div>';
 
                     // $counter++;

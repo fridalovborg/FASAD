@@ -19,10 +19,17 @@
     }
 
     &__item {
+        background-color: $ligtPink;
+        box-sizing: border-box;
         margin: 1rem;
 
         @media #{$desktop} {
+            padding: 1.5rem;
             width: calc(100% / 3 - 2rem);
+
+            &:hover {
+                box-shadow: 0px 10px 80px rgba(0, 0, 0, 0.05);
+            }
             // padding: 0.5rem;
             // background-color: $ligtPink;
             // flex-direction: row;
@@ -60,25 +67,28 @@
         &-title {
             font-size: 18px;
         }
+    }
 
-        &-etikett {
-            margin: 0 0 24px 0;
-            text-transform: uppercase;
+    &__etikett {
+        font-size: 13px;
+
+        a:hover {
+            border-bottom: 1px solid;
+        }
+
+        ul {
+            padding: 0;
+
+            li {
+                display: inline;
+                list-style: none;
+            }
         }
     }
 
     &__link {
-        background-color: $ligtPink;
         display: block;
         color: inherit;
-
-        @media #{$desktop} {
-            padding: 1.5rem;
-
-            &:hover {
-                box-shadow: 0px 10px 80px rgba(0, 0, 0, 0.05);
-            }
-        }
     }
 
     &__tags a:hover {
