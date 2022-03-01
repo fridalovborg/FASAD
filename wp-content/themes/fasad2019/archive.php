@@ -28,7 +28,6 @@
                 }
                 echo '</div>';
             }
-            // $counter =  1;
 
             if ( have_posts() ) {
                 echo '<div class="fasad-news__list">';
@@ -41,30 +40,22 @@
 
                     if (!$image) $image = 'http://localhost:8888/js-bootcamp/wp-content/uploads/2021/11/hero-image.fill_.size_1248x702.v1624470400.jpg';
 
-                    // if ($counter%2 == 0) {
-                    //     $order = 'reverse-order';
-                    // } else {
-                    //     $order = '';
-                    // }
-
-                    // echo '<div class="fasad-news__item ' . $order . '">';
-                    echo '<div class="fasad-news__item">';
                     echo '<a class="fasad-news__link" href="' . $post_page_link . '">';
+                    echo '<div class="fasad-news__item">';
                     if ($image) {
                         echo '<img class="image fasad-news__item-image" src="' . $image . '" alt="' . $title . '">';
                     }
                     echo '<div class="fasad-news__item-content">';
-                    echo '<a class="fasad-news__link" href="' . $post_page_link . '">';
+
+                    echo '<p class="fasad-news__item-etikett">';
+                        the_category();
+                    echo '</p>';
+
                     echo '<h3 class="fasad-news__item-title">' . $title . '</h3>';
                     echo '<p>' . wp_trim_words( get_the_content(), 20, '...' ) . '</p>';
+                    echo '</div>';
+                    echo '</div>';
                     echo '</a>';
-                    echo '</div>';
-                    echo '<div class="fasad-news__etikett">';
-                    the_category();
-                    echo '</div>';
-                    echo '</div>';
-
-                    // $counter++;
                 endwhile;
                 echo '</div>';
             }

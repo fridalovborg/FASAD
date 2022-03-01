@@ -5,7 +5,6 @@
 
     <div class="fasad-news">
         <?php
-            $counter =  1;
             if ( have_posts() ) {
                 echo '<div class="fasad-news__list">';
                 while ( have_posts() ) : the_post();
@@ -13,12 +12,6 @@
                     $title = get_the_title();
                     $image = get_the_post_thumbnail_url(get_the_ID(), 'fasad_frontpage');
                     $etikett = get_field('etikett');
-
-                    if ($counter%2 == 0) {
-                        $order = 'reverse-order';
-                    } else {
-                        $order = '';
-                    }
 
                     echo '<a class="fasad-news__link" href="' . $post_page_link . '">';
                     echo '<div class="fasad-news__item ' . $order . '">';
@@ -29,13 +22,11 @@
                     if ($etikett) {
                         echo '<p class="fasad-news__item-etikett">' . $etikett . '</p>';
                     }
-                    echo '<h2 class="fasad-news__item-title">' . $title . '</h2>';
-                    echo '<p>' . excerpt(50) . '</p>';
+                    echo '<h3 class="fasad-news__item-title">' . $title . '</h3>';
+                    echo '<p>' . excerpt(20) . '</p>';
                     echo '</div>';
                     echo '</div>';
                     echo '</a>';
-
-                    $counter++;
                 endwhile;
                 echo '</div>';
             }

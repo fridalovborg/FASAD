@@ -16,23 +16,37 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
+        margin: 0 -1rem;
 
         @media #{$desktop} {
             justify-content: flex-start;
         }
     }
 
-    &__link {
+    // &__link {
+    //     @media #{$desktop} {
+    //         width: calc((100% / 2) - 2rem);
+    //     }
+
+    //     @media #{$largeDeskop} {
+    //         width: calc((100% / 3) - 2rem);
+    //     }
+    // }
+
+    &__item {
+        background-color: #FFF9F5;
+        box-sizing: border-box;
+        margin: 1rem;
+
         @media #{$desktop} {
+            padding: 1.5rem;
             width: calc((100% / 2) - 2rem);
         }
 
         @media #{$largeDeskop} {
             width: calc((100% / 3) - 2rem);
         }
-    }
 
-    &__item {
         &-content {
             max-width: 400px;
         }
