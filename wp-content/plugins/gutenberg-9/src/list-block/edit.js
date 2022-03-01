@@ -34,7 +34,7 @@ export default class Edit extends Component {
 		const colors = [
 			{ name: 'Mint', color: '#C8EDDB' },
 			{ name: 'Green', color: '#107664' },
-			{ name: 'Beige', color: '#BEAF9A' },
+			{ name: 'Beige', color: '#776d60' },
 			{ name: 'Light pink', color: '#FFF9F5' },
 			{ name: 'Pink', color: '#F2A7BC' },
 		];

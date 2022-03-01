@@ -12,12 +12,12 @@
                 echo '<div class="fasad-footer__item">';
                 echo '<h3 class="fasad-footer__item-title">' . esc_html( $social_media['title'] ) . '</h3>';
                 if( $facebook ) :
-                    echo '<a class="socialmedia-link" href="' . esc_url( $facebook ) . '" target="_blank">';
+                    echo '<a class="socialmedia-link" href="' . esc_url( $facebook ) . '" target="_blank" title="Facebook" rel="noopener">';
                     echo '<i class="fa fa-facebook"></i>';
                     echo '</a>';
                 endif;
                 if( $instagram ) :
-                    echo '<a class="socialmedia-link" href="' . esc_url( $instagram ) . '" target="_blank">';
+                    echo '<a class="socialmedia-link" href="' . esc_url( $instagram ) . '" target="_blank" title="LinkedIn" rel="noopener">';
                     echo '<i class="fa fa-linkedin"></i>';
                     echo '</a>';
                 endif;    
@@ -30,7 +30,7 @@
 
                     if ($links) :
                         foreach ($links as $link) :
-                            echo '<a class="collaboration-link" href="' . esc_url( $link['link']['url'] ) . '" '.( $link['link']['target'] ? 'target="' . esc_attr( $link['link']['target'] ) . '"' : '').'>';
+                            echo '<a class="collaboration-link" href="' . esc_url( $link['link']['url'] ) . '" rel="noopener" '.( $link['link']['target'] ? 'target="' . esc_attr( $link['link']['target'] ) . '"' : '').'>';
                             echo esc_html( $link['link']['title'] );
                             echo '</a>';
 

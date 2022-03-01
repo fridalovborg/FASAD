@@ -3,7 +3,7 @@
     padding: 5px 30px;
 
     .form-title {
-        color: $ligtPink;
+        color: $green;
         text-transform: uppercase;
         text-align: center;
     }
@@ -13,26 +13,26 @@
         width: 100%;
         background: transparent;
         border: none;
-        color: $ligtPink;
+        color: $green;
         padding-top: 10px;
     }
 
     input:focus,
     textarea:focus {
-        outline-color: $ligtPink;
+        outline-color: $green;
         outline-offset: -2px;
         outline-style: auto;
         outline-width: 5px;
     }
 
     label {
-        color: $ligtPink;
+        color: $green;
         font-size: 16px;
         font-style: italic;
     }
 
     .wpcf7-form-control-wrap {
-        border-bottom: 2px solid $ligtPink;
+        border-bottom: 2px solid $green;
         padding: 5px 0;
 
         &.acceptance-370 {
