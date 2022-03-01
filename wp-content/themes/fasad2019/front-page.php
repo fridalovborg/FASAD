@@ -69,7 +69,9 @@ get_header();
                     <a class="link" href="<?= $link['url'] ?>" <?= ($link['target'] ? 'target="' . $link['target'] . '"' : '') ?>>
                         <div class="news-title-overlay"></div>
                         <h2 class="title"><?= $title?></h2>
-                        <img class="image" src="<?= $image['sizes']['fasad_frontpage'] ?>" alt="<?= $image['description'] ?>">
+                        <?php if($image['sizes']['fasad_frontpage']) : ?>
+                            <img class="image" src="<?= $image['sizes']['fasad_frontpage'] ?>" alt="<?= $image['description'] ?>">
+                        <?php endif; ?>
                     </a>
                 </div>
 <?php
