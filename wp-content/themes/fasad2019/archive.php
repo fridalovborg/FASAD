@@ -46,7 +46,9 @@
                     // echo '<div class="fasad-news__item ' . $order . '">';
                     echo '<div class="fasad-news__item">';
                     echo '<a class="fasad-news__link" href="' . $post_page_link . '">';
-                    echo '<img class="image fasad-news__item-image" src="' . $image . '" alt="' . $title . '">';
+                    if ($image) {
+                        echo '<img class="image fasad-news__item-image" src="' . $image . '" alt="' . $title . '">';
+                    }
                     echo '<div class="fasad-news__item-content">';
                     if ($etikett) {
                         echo '<p class="fasad-news__item-etikett">' . $etikett . '</p>';
