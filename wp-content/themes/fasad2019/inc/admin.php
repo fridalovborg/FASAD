@@ -156,3 +156,19 @@ function wpse28145_add_custom_types( $query ) {
     }
 }
 add_filter( 'pre_get_posts', 'wpse28145_add_custom_types' );
+
+// Custom post type category template
+add_filter('pre_get_posts', 'better_editions_archive');
+function better_editions_archive( $query ) {
+    if ( is_category() && $query->is_main_query() ) {
+        $query->set( 'post_type', array( 'aktuella', 'debatt', 'aktiviteter' ) );
+        $query->set( 'post_type', array( 'aktuella', 'debatt', 'aktiviteter' ) );
+    }
+    return $query;
+}
+
+// Remove WP Posts from admin menu
+add_action('admin_menu', 'post_remove');
+function post_remove() { 
+   remove_menu_page('edit.php');
+}
