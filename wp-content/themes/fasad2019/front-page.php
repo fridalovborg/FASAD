@@ -2,6 +2,9 @@
 get_header();
 ?>
             <div class="frontpage_container">
+            <!-- <div class="frontpage_container-item frontpage_container-item--news">
+                <?= latestPost('aktiviteter'); ?>
+            </div> -->
 <?php
             // Introduction
             while( have_rows('introduction') ): the_row();
@@ -38,7 +41,7 @@ get_header();
 ?>
             <!-- News -->
             <div class="frontpage_container-item frontpage_container-item--news">
-                <?= latestPost(); ?>
+                <?= latestPost('post'); ?>
             </div>
 <?php
             // Let us know

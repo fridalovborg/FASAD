@@ -12,11 +12,14 @@
 
     &-item {
         margin: 10px;
-        width: 100%;
+        width: calc(100vw - 40px);
         max-width: 400px;
+        height: calc(100vw - 40px);
+        max-height: 400px;
 
         @media #{$desktop} {
             width: calc(33.3% - 20px);
+            height: auto;
         }
     }
 
@@ -27,7 +30,7 @@
 
         .text {
             color: $beige;
-            font-size: 57px;
+            font-size: 45px;
             text-transform: uppercase;
             font-weight: 700;
             line-height: normal;
@@ -36,11 +39,11 @@
             margin: 0 auto;
 
             @media #{$desktop} {
-                font-size: 50px;
+                font-size: 35px;
             }
 
             @media #{$largeDeskop} {
-                font-size: 57px;
+                font-size: 45px;
             }
         }
 
@@ -54,13 +57,12 @@
         background-color: $mint;
 
         .title,
-        .text,
-        .line {
-            color: $ligtPink;
+        .text {
+            color: $green;
         }
 
         .line {
-            background-color: $ligtPink;
+            background-color: $green;
         }
     }
 
@@ -168,15 +170,15 @@
         }
 
         .title {
-            font-size: 18px;
+            font-size: 16px;
             margin: 0;
-            color: $beige;
+            color: $lightBeige;
             text-align: center;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: calc(100% - 40px);
+            width: calc(100% - 50px);
 
             @media #{$desktop} {
                 opacity: 0;

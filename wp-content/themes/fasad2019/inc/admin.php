@@ -46,9 +46,9 @@ function fasad_image_sized() {
 }
 
 //Latest posts
-function latestPost() {
+function latestPost($post_type) {
     $get_latest_post = array(
-        'post_type' => 'post',
+        'post_type' => $post_type,
         'posts_per_page' => 1,
         'order' => 'DESC',
     );
