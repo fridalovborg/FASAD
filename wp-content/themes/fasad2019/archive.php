@@ -1,6 +1,6 @@
 <?php
     get_header();
-
+    
     $postType = get_queried_object();
     $title = esc_html($postType->label);
     if (is_category() || is_tag()) $title = single_cat_title("", false);
@@ -38,7 +38,7 @@
                     $image = get_the_post_thumbnail_url(get_the_ID(), 'fasad_frontpage');
                     $etikett = get_field('etikett');
 
-                    if (!$image) $image = 'http://localhost:8888/js-bootcamp/wp-content/uploads/2021/11/hero-image.fill_.size_1248x702.v1624470400.jpg';
+                    if (!$image) $image = 'http://foreningenfasad.se/wp-content/uploads/2020/04/8.jpeg';
 
                     echo '<a class="fasad-news__link" href="' . $post_page_link . '">';
                     echo '<div class="fasad-news__item">';
@@ -47,9 +47,15 @@
                     }
                     echo '<div class="fasad-news__item-content">';
 
-                    echo '<p class="fasad-news__item-etikett">';
-                        the_category();
-                    echo '</p>';
+                    if ($postType->name === 'aktuella') {
+                        $terms = wp_get_post_terms( $post->ID, 'category');
+
+                        foreach ($terms as $term) {
+                            echo '<p class="fasad-news__item-etikett">';
+                                echo $term->name;
+                            echo '</p>';
+                        }
+                    }
 
                     echo '<h3 class="fasad-news__item-title">' . $title . '</h3>';
                     echo '<p>' . wp_trim_words( get_the_content(), 20, '...' ) . '</p>';

@@ -23,20 +23,11 @@
         }
     }
 
-    // &__link {
-    //     @media #{$desktop} {
-    //         width: calc((100% / 2) - 2rem);
-    //     }
-
-    //     @media #{$largeDeskop} {
-    //         width: calc((100% / 3) - 2rem);
-    //     }
-    // }
-
-    &__item {
+    &__link {
         background-color: #FFF9F5;
         box-sizing: border-box;
         margin: 1rem;
+        max-width: 400px;
 
         @media #{$desktop} {
             padding: 1.5rem;
@@ -46,11 +37,7 @@
         @media #{$largeDeskop} {
             width: calc((100% / 3) - 2rem);
         }
-
-        &-content {
-            max-width: 400px;
-        }
-
+        
         &-title {
             font-size: 18px;
         }

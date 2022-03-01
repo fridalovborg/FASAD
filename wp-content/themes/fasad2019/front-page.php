@@ -41,7 +41,7 @@ get_header();
 ?>
             <!-- News -->
             <div class="frontpage_container-item frontpage_container-item--news">
-                <?= latestPost('post'); ?>
+                <?= latestPost('debatt'); ?>
             </div>
 <?php
             // Let us know
