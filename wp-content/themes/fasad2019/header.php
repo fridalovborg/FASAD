@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <title><?= get_bloginfo( 'name' ); ?></title>
+    <?php
+    $postType = get_queried_object();
+    $title = esc_html($postType->label);
+    if (is_category() || is_tag()) $title = single_cat_title("", false);
+    ?>
+    <title><?php if ( is_single() ) {
+        bloginfo('name'); echo " - "; single_post_title('', true); 
+    } else if (is_post_type_archive()) {
+        bloginfo('name'); echo " - " . $title;
+    } else if (is_front_page()) {
+        bloginfo('name');
+    } else {
+        bloginfo('name'); echo " - "; the_title();
+    }?>"</title>
+    <meta name="description" content="<?php if ( is_single() ) {
+        single_post_title('', true); 
+    } else {
+        bloginfo('name'); echo " - "; bloginfo('description');
+    }?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/e50c82b448.js" crossorigin="anonymous" defer></script>
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="1b015562-64b5-4dc2-bdc5-7aedb4548120" data-blockingmode="auto" async></script>
