@@ -34,6 +34,18 @@
     .wpcf7-form-control-wrap {
         border-bottom: 2px solid $ligtPink;
         padding: 5px 0;
+
+        &.acceptance-370 {
+            border: none;
+
+            & .wpcf7-list-item {
+                margin: 0;
+            }
+
+            & input {
+                width: auto;
+            }
+        }
     }
 
     input[type=submit] {
