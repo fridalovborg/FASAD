@@ -134,12 +134,12 @@ function cpt_debatt() {
     register_post_type( 'debatt',
         array(
             'labels' => array(
-                'name' => __( 'Debatt' ),
-                'singular_name' => __( 'Debatt' )
+                'name' => __( 'Inlägg' ),
+                'singular_name' => __( 'Inlägg' )
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'debatt'),
+            'rewrite' => array('slug' => 'inlagg'),
             'show_in_rest' => true,
             'supports' => array( 'title', 'thumbnail', 'editor', 'custom-fields' ),
         )
