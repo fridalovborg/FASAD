@@ -6,4 +6,10 @@
 
 .image-block {
     margin: 40px 0;
+
+    &__text {
+        font-size: 13px;
+        margin-top: 0.5em;
+        font-style: italic;
+    }
 }

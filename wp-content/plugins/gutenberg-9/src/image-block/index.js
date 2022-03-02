@@ -9,8 +9,8 @@
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { MediaUpload, MediaPlaceholder, BlockControls } = wp.blockEditor;
-const { IconButton, Toolbar } = wp.components;
+const { MediaUpload, MediaPlaceholder, BlockControls, InspectorControls } = wp.blockEditor;
+const { IconButton, Toolbar, TextControl } = wp.components;
 
 /**
  * Register block
@@ -37,10 +37,13 @@ export default registerBlockType(
                 source: 'attribute',
                 attribute: 'alt',
                 selector: 'img',
+            },
+            imageText: {
+                type: 'string',
             }
         },
         edit: props => {
-            const { attributes: { imgId, imgUrl, imgAlt },
+            const { attributes: { imgId, imgUrl, imgAlt, imageText },
                 className, setAttributes } = props;
 
             const onSelectImage = img => {
@@ -51,9 +54,12 @@ export default registerBlockType(
                 } );
             };
 
+            const onChangeImageText = imageText => {
+                setAttributes( { imageText } );
+            };
+
             return (
                 <div className={ className }>
-
                     { ! imgUrl ? (
 
                     <div className={ className }>
@@ -92,6 +98,13 @@ export default registerBlockType(
                     ) : (
 
                         <div className={ className }>
+                        <InspectorControls>
+                            <TextControl
+                                label="Bildtext"
+                                value={ imageText }
+                                onChange={ onChangeImageText }
+                            />
+                        </InspectorControls>
                         <BlockControls>
                             <Toolbar>
                                 <MediaUpload
@@ -126,7 +139,7 @@ export default registerBlockType(
             );
         },
         save: props => {
-            const { imgUrl, imgAlt } = props.attributes;
+            const { imgUrl, imgAlt, imageText } = props.attributes;
 
             return (
                 <div className='image-block'>
@@ -135,6 +148,9 @@ export default registerBlockType(
                         src={ imgUrl }
                         alt={ imgAlt }
                     />
+                    { imageText && (
+                        <p class="image-block__text">{ imageText }</p>
+                    )}
                 </div>
             );
         },
