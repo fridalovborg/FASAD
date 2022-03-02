@@ -1,10 +1,10 @@
 <?php
 get_header();
 ?>
-            <div class="frontpage_container">
-            <!-- <div class="frontpage_container-item frontpage_container-item--news">
+        <div class="frontpage_container">
+            <div class="frontpage_container-item frontpage_container-item--news">
                 <?= latestPost('aktiviteter'); ?>
-            </div> -->
+            </div>
 <?php
             // Introduction
             while( have_rows('introduction') ): the_row();
@@ -26,18 +26,18 @@ get_header();
             endwhile;   
 
             // Next meeting
-            while( have_rows('next_meting') ): the_row();
-                $text = get_sub_field('text');
-                $link = get_sub_field('link');
+            // while( have_rows('next_meting') ): the_row();
+            //     $text = get_sub_field('text');
+            //     $link = get_sub_field('link');
 ?>
-                <div class="frontpage_container-item frontpage_container-item--agenda">
+                <!-- <div class="frontpage_container-item frontpage_container-item--agenda">
                     <a class="link" href="<?= $link['url'] ?>" <?= ($link['target'] ? 'target="' . $link['target'] . '"' : '') ?>>
                         <p class="text"><?= $text ?></p>
                         <hr class="line">
                     </a>
-                </div>
+                </div> -->
 <?php
-            endwhile;  
+            // endwhile;  
 ?>
             <!-- News -->
             <div class="frontpage_container-item frontpage_container-item--news">
@@ -98,6 +98,6 @@ get_header();
 <?php
             endwhile;
 ?>
-            </div>
+        </div>
 <?php
 get_footer();
