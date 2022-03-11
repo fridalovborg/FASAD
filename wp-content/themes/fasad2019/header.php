@@ -68,5 +68,6 @@
         );
         ?>
     </nav><!-- .mobile-menu -->
+    <?php get_search_form(); ?>
     <div class="fasad-main">
         <div class="fasad-main__container">
